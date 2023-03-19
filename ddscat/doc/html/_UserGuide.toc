@@ -1,0 +1,167 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{7}
+\contentsline {section}{\numberline {2}Applicability of the DDA}{8}
+\contentsline {section}{\numberline {3}DDSCAT 7.3}{12}
+\contentsline {subsection}{\numberline {3.1} What Does It Calculate?}{12}
+\contentsline {subsubsection}{\numberline {3.1.1}Absorption and Scattering by Finite Targets}{12}
+\contentsline {subsubsection}{\numberline {3.1.2} Absorption and Scattering by Periodic Arrays of Finite Structures}{12}
+\contentsline {subsection}{\numberline {3.2} Application to Targets in Dielectric Media}{12}
+\contentsline {section}{\numberline {4}What's New?}{13}
+\contentsline {section}{\numberline {5}Downloading the Source Code and Example Calculations }{15}
+\contentsline {section}{\numberline {6}Compiling and Linking on Unix/Linux Systems}{15}
+\contentsline {subsection}{\numberline {6.1} The default Makefile}{15}
+\contentsline {subsection}{\numberline {6.2} Optimization}{16}
+\contentsline {subsection}{\numberline {6.3} Single vs.\ Double Precision}{16}
+\contentsline {subsection}{\numberline {6.4} OpenMP}{17}
+\contentsline {subsection}{\numberline {6.5} MKL: the Intel\textsuperscript {\textregistered }\ Math Kernel Library }{17}
+\contentsline {subsection}{\numberline {6.6} MPI: Message Passing Interface }{18}
+\contentsline {subsection}{\numberline {6.7} Device Numbers {\tt IDVOUT} and {\tt IDVERR} }{18}
+\contentsline {section}{\numberline {7} Information for Windows Users}{18}
+\contentsline {subsection}{\numberline {7.1} Native executable}{19}
+\contentsline {subsection}{\numberline {7.2}Compilation using MINGW}{19}
+\contentsline {subsection}{\numberline {7.3}Compilation using CYGWIN}{20}
+\contentsline {subsection}{\numberline {7.4}UBUNTU and Virtualbox}{20}
+\contentsline {subsection}{\numberline {7.5}Compilation in Windows}{20}
+\contentsline {section}{\numberline {8}A Sample Calculation: {\tt RCTGLPRSM} }{20}
+\contentsline {section}{\numberline {9}The Parameter File {\tt ddscat.par} }{21}
+\contentsline {subsection}{\numberline {9.1} Preliminaries}{21}
+\contentsline {subsection}{\numberline {9.2} Initial Memory Allocation}{22}
+\contentsline {subsection}{\numberline {9.3} Target Geometry and Composition}{22}
+\contentsline {subsection}{\numberline {9.4} Additional Nearfield Calculation?}{22}
+\contentsline {subsection}{\numberline {9.5} Error Tolerance}{22}
+\contentsline {subsection}{\numberline {9.6} Maximum Number of Iterations}{23}
+\contentsline {subsection}{\numberline {9.7} Interaction Cutoff Parameter for PBC Calculations}{23}
+\contentsline {subsection}{\numberline {9.8} Angular Resolution for Computation of $\delimiter "426830A \qopname \relax o{cos}\theta \delimiter "526930B $, etc.}{23}
+\contentsline {subsection}{\numberline {9.9} Vacuum Wavelengths}{23}
+\contentsline {subsection}{\numberline {9.10} Refractive Index of Ambient Medium, $m_{\rm medium}$}{23}
+\contentsline {subsection}{\numberline {9.11} Target Size ${a}_{\rm eff}$}{24}
+\contentsline {subsection}{\numberline {9.12} Incident Polarization}{24}
+\contentsline {subsection}{\numberline {9.13} Target Orientation}{24}
+\contentsline {subsection}{\numberline {9.14} Starting Values of {\tt IWAV}, {\tt IRAD}, {\tt IORI}}{24}
+\contentsline {subsection}{\numberline {9.15} Which Mueller Matrix Elements?}{25}
+\contentsline {subsection}{\numberline {9.16} What Scattering Directions?}{25}
+\contentsline {subsubsection}{\numberline {9.16.1}Isolated Finite Targets}{25}
+\contentsline {subsubsection}{\numberline {9.16.2}1-D Periodic Targets}{25}
+\contentsline {subsubsection}{\numberline {9.16.3}2-D Periodic Targets}{25}
+\contentsline {section}{\numberline {10}Running {\bf DDSCAT 7.3}\ Using the Sample {\tt ddscat.par} File}{25}
+\contentsline {subsection}{\numberline {10.1} Single-Process Execution}{25}
+\contentsline {subsection}{\numberline {10.2} Code Execution Under MPI}{26}
+\contentsline {section}{\numberline {11}Output Files}{27}
+\contentsline {subsection}{\numberline {11.1} ASCII files}{27}
+\contentsline {subsection}{\numberline {11.2} Binary Option}{28}
+\contentsline {section}{\numberline {12}Choice of Iterative Algorithm}{28}
+\contentsline {section}{\numberline {13}Choice of FFT Algorithm}{29}
+\contentsline {section}{\numberline {14}Choice of DDA Method}{30}
+\contentsline {subsection}{\numberline {14.1}Point Dipoles: Options LATTDR and GKDLDR}{30}
+\contentsline {subsection}{\numberline {14.2}Filtered Coupled Dipole: option FLTRCD}{31}
+\contentsline {section}{\numberline {15}Dielectric Functions}{31}
+\contentsline {section}{\numberline {16}Calculation of $\delimiter "426830A \qopname \relax o{cos}\theta \delimiter "526930B $, Radiative Force, and Radiation Torque }{33}
+\contentsline {section}{\numberline {17}Memory Requirements }{33}
+\contentsline {section}{\numberline {18}Target Geometry: The Target Frame }{34}
+\contentsline {section}{\numberline {19}Target Orientation }{34}
+\contentsline {subsection}{\numberline {19.1} Orientation of the Target in the Lab Frame}{34}
+\contentsline {subsection}{\numberline {19.2} Orientation of the Incident Beam in the Target Frame}{36}
+\contentsline {subsection}{\numberline {19.3} Sampling in $\Theta $, $\Phi $, and $\beta $}{36}
+\contentsline {section}{\numberline {20}Orientational Averaging}{37}
+\contentsline {subsection}{\numberline {20.1} Randomly-Oriented Targets}{37}
+\contentsline {subsection}{\numberline {20.2} Nonrandomly-Oriented Targets}{37}
+\contentsline {section}{\numberline {21}Target Generation: Isolated Finite Targets }{38}
+\contentsline {subsection}{\numberline {21.1} FROM\_FILE = Target composed of possibly anisotropic material, defined by list of dipole locations and ``compositions'' obtained from a file }{39}
+\contentsline {subsubsection}{\numberline {21.1.1}\bf Sample calculation in directory examples\_exp/FROM\_FILE}{40}
+\contentsline {subsection}{\numberline {21.2} ANIFRMFIL = General anistropic target defined by list of dipole locations,``compositions'', and material orientations obtained from a file }{40}
+\contentsline {subsection}{\numberline {21.3} ANIELLIPS = Homogeneous, anisotropic ellipsoid. }{42}
+\contentsline {subsection}{\numberline {21.4} ANI\_ELL\_2 = Two touching, homogeneous, anisotropic ellipsoids, with distinct compositions }{42}
+\contentsline {subsection}{\numberline {21.5} ANI\_ELL\_3 = Three touching homogeneous, anisotropic ellipsoids with same size and orientation but distinct dielectric tensors }{42}
+\contentsline {subsection}{\numberline {21.6} ANIRCTNGL = Homogeneous, anisotropic, rectangular solid }{42}
+\contentsline {subsubsection}{\numberline {21.6.1}\bf Sample calculation in directory examples\_exp/ANIRCTNGL}{42}
+\contentsline {subsection}{\numberline {21.7} CONELLIPS = Two concentric ellipsoids }{43}
+\contentsline {subsection}{\numberline {21.8} CYLINDER1 = Homogeneous, isotropic finite cylinder }{44}
+\contentsline {subsection}{\numberline {21.9} CYLNDRCAP = Homogeneous, isotropic finite cylinder with hemispherical endcaps. }{44}
+\contentsline {subsection}{\numberline {21.10} DSKRCTNGL = Disk on top of a homogeneous rectangular slab }{44}
+\contentsline {subsection}{\numberline {21.11} DW1996TAR = 13 block target used by \citet {Draine+Weingartner_1996}. }{45}
+\contentsline {subsection}{\numberline {21.12} ELLIPSOID = Homogeneous, isotropic ellipsoid. }{45}
+\contentsline {subsubsection}{\numberline {21.12.1}\bf Sample calculation in directory examples\_exp/ELLIPSOID}{45}
+\contentsline {subsubsection}{\numberline {21.12.2} \bf Sample calculation in directory examples\_exp/ELLIPSOID\_NEARFIELD}{45}
+\contentsline {subsection}{\numberline {21.13} ELLIPSO\_2 = Two touching, homogeneous, isotropic ellipsoids, with distinct compositions }{46}
+\contentsline {subsection}{\numberline {21.14} ELLIPSO\_3 = Three touching homogeneous, isotropic ellipsoids of equal size and orientation, but distinct compositions }{46}
+\contentsline {subsection}{\numberline {21.15} HEX\_PRISM = Homogeneous, isotropic hexagonal prism }{46}
+\contentsline {subsection}{\numberline {21.16} LAYRDSLAB = Multilayer rectangular slab }{47}
+\contentsline {subsection}{\numberline {21.17} MLTBLOCKS = Homogeneous target constructed from cubic ``blocks'' }{47}
+\contentsline {subsection}{\numberline {21.18} RCTGLPRSM = Homogeneous, isotropic, rectangular solid }{47}
+\contentsline {subsubsection}{\numberline {21.18.1} \bf Sample calculation in directory examples\_exp/RCTGLPRSM}{47}
+\contentsline {subsubsection}{\numberline {21.18.2} \bf Sample calculation in directory examples\_exp/RCTGLPRSM\_NEARFIELD}{48}
+\contentsline {subsection}{\numberline {21.19} RCTGLBLK3 = Stack of 3 rectangular blocks, with centers on the $\mathaccentV {hat}05E{\bf x}_{\rm TF}$ axis. }{48}
+\contentsline {subsection}{\numberline {21.20} SLAB\_HOLE = Rectangular slab with a cylindrical hole. }{48}
+\contentsline {subsection}{\numberline {21.21} SPHERES\_N = Multisphere target = union of $N$ spheres of single isotropic material }{48}
+\contentsline {subsubsection}{\numberline {21.21.1} \bf Sample calculation in directory examples\_exp/SPHERES\_N}{49}
+\contentsline {subsection}{\numberline {21.22} SPHROID\_2 = Two touching homogeneous, isotropic spheroids, with distinct compositions }{49}
+\contentsline {subsection}{\numberline {21.23} SPH\_ANI\_N = Multisphere target consisting of the union of $N$ spheres of various materials, possibly anisotropic }{50}
+\contentsline {subsubsection}{\numberline {21.23.1}\bf Sample calculation in directory examples\_exp/SPH\_ANI\_N}{51}
+\contentsline {subsection}{\numberline {21.24} TETRAHDRN = Homogeneous, isotropic tetrahedron }{51}
+\contentsline {subsection}{\numberline {21.25} TRNGLPRSM = Triangular prism of homogeneous, isotropic material }{51}
+\contentsline {subsection}{\numberline {21.26} UNIAXICYL = Homogeneous finite cylinder with uniaxial anisotropic dielectric tensor }{51}
+\contentsline {subsection}{\numberline {21.27} Modifying Existing Routines or Writing New Ones}{51}
+\contentsline {subsection}{\numberline {21.28} Testing Target Generation using CALLTARGET}{51}
+\contentsline {section}{\numberline {22}Target Generation: Periodic Targets }{52}
+\contentsline {subsection}{\numberline {22.1} FRMFILPBC = periodic target with TUC geometry and composition input from a file }{52}
+\contentsline {subsubsection}{\numberline {22.1.1}\bf Sample calculation in directory examples\_exp/FRMFILPBC}{53}
+\contentsline {subsection}{\numberline {22.2} ANIFILPBC = general anisotropic periodic target with TUC geometry and composition input from a file }{53}
+\contentsline {subsection}{\numberline {22.3} BISLINPBC = Bi-Layer Slab with Parallel Lines}{53}
+\contentsline {subsection}{\numberline {22.4} CYLNDRPBC = Target consisting of homogeneous cylinder repeated in target y and/or z directions using periodic boundary conditions}{54}
+\contentsline {subsubsection}{\numberline {22.4.1}\bf Sample calculation in directory examples\_exp/CYLNDRPBC}{55}
+\contentsline {subsection}{\numberline {22.5} DSKBLYPBC = Target consisting of a periodic array of disks on top of a two-layer rectangular slabs.}{55}
+\contentsline {subsection}{\numberline {22.6} DSKRCTPBC = Target consisting of homogeneous rectangular brick plus a disk, extended in target y and z directions using periodic boundary conditions}{56}
+\contentsline {subsubsection}{\numberline {22.6.1}\bf Sample calculation in directory examples\_exp/DSKRCTPBC}{57}
+\contentsline {subsection}{\numberline {22.7} HEXGONPBC = Target consisting of homogeneous hexagonal prism repeated in target y and/or z directions using periodic boundary conditions}{57}
+\contentsline {subsection}{\numberline {22.8} LYRSLBPBC = Target consisting of layered slab, extended in target y and z directions using periodic boundary conditions}{59}
+\contentsline {subsection}{\numberline {22.9} RCTGL\_PBC = Target consisting of homogeneous rectangular brick, extended in target y and z directions using periodic boundary conditions}{61}
+\contentsline {subsubsection}{\numberline {22.9.1}\bf Sample calculation in directory examples\_exp/RCTGL\_PBC}{61}
+\contentsline {subsubsection}{\numberline {22.9.2}\bf Sample calculation in directory examples\_exp/RCTGL\_PBC\_NEARFIELD}{61}
+\contentsline {subsubsection}{\numberline {22.9.3}\bf Sample calculation in directory examples\_exp/RCTGL\_PBC\_NEARFLD\_B}{61}
+\contentsline {subsection}{\numberline {22.10} RECRECPBC = Rectangular solid resting on top of another rectangular solid, repeated periodically in target y and z directions using periodic boundary conditions}{63}
+\contentsline {subsection}{\numberline {22.11} SLBHOLPBC = Target consisting of a periodic array of rectangular blocks, each containing a cylindrical hole }{65}
+\contentsline {subsection}{\numberline {22.12} SPHRN\_PBC = Target consisting of group of N spheres, extended in target y and z directions using periodic boundary conditions}{65}
+\contentsline {subsubsection}{\numberline {22.12.1}\bf Sample calculation in directory examples\_exp/SPHRN\_PBC}{66}
+\contentsline {subsection}{\numberline {22.13} TRILYRPBC = Three stacked rectangular blocks, repeated periodically}{66}
+\contentsline {section}{\numberline {23}Scattering Directions }{67}
+\contentsline {subsection}{\numberline {23.1} Isolated Finite Targets}{67}
+\contentsline {subsection}{\numberline {23.2}Scattering Directions for Targets that are Periodic in 1 Dimension }{67}
+\contentsline {subsection}{\numberline {23.3}Scattering Directions for Targets for Doubly-Periodic Targets }{69}
+\contentsline {section}{\numberline {24}Incident Polarization State}{70}
+\contentsline {section}{\numberline {25}Averaging over Scattering Directions: $g(1)=\delimiter "426830A \qopname \relax o{cos}\theta _s\delimiter "526930B $, etc.}{70}
+\contentsline {subsection}{\numberline {25.1}Angular Averaging}{70}
+\contentsline {subsection}{\numberline {25.2}Selection of Scattering Angles $\theta _s,\phi _s$}{72}
+\contentsline {subsection}{\numberline {25.3}Accuracy of Angular Averaging as a Function of $\eta $}{73}
+\contentsline {section}{\numberline {26}Scattering by Finite Targets: The Mueller Matrix }{74}
+\contentsline {subsection}{\numberline {26.1} Two Orthogonal Incident Polarizations ({\tt IORTH=2})}{74}
+\contentsline {subsection}{\numberline {26.2} Stokes Parameters}{75}
+\contentsline {subsection}{\numberline {26.3}Relation Between Stokes Parameters of Incident and Scattered Radiation: The Mueller Matrix}{76}
+\contentsline {subsection}{\numberline {26.4}Polarization Properties of the Scattered Radiation}{76}
+\contentsline {subsection}{\numberline {26.5}Relation Between Mueller Matrix and Scattering Cross Sections}{77}
+\contentsline {subsection}{\numberline {26.6}One Incident Polarization State Only ({\tt IORTH=1})}{78}
+\contentsline {section}{\numberline {27}Scattering by Periodic Targets: Generalized Mueller Matrix }{79}
+\contentsline {subsection}{\numberline {27.1}Mueller Matrix $S_{ij}^{(1d)}$ for Targets Periodic in One Direction}{79}
+\contentsline {subsection}{\numberline {27.2} Mueller Matrix $S_{ij}^{(2d)}(M,N)$ for Targets Periodic in Two Directions}{79}
+\contentsline {section}{\numberline {28}Composite Targets with Anisotropic Constituents }{79}
+\contentsline {section}{\numberline {29}Near-Field Calculations: ${\bf E}$ and ${\bf B}$ Within or Near the Target }{81}
+\contentsline {subsection}{\numberline {29.1}Running {\bf DDSCAT 7.3}\ with NRFLD = 1}{81}
+\contentsline {subsection}{\numberline {29.2}Running {\bf DDSCAT 7.3}\ with NRFLD = 2}{82}
+\contentsline {subsection}{\numberline {29.3}The Binary Files {\tt w}{\it xxx}{\tt r}{\it yyy}{\tt k}{\it zzz}{\tt .E}{\it n}}{82}
+\contentsline {subsection}{\numberline {29.4}The Binary Files {\tt w}{\it xxx}{\tt r}{\it yyy}{\tt k}{\it zzz}{\tt .EB}{\it n}}{82}
+\contentsline {section}{\numberline {30}Post-Processing of Near-Field Calculations }{83}
+\contentsline {subsection}{\numberline {30.1}The Program ddpostprocess }{83}
+\contentsline {subsection}{\numberline {30.2}Modifying DDPOSTPROCESS.f90}{85}
+\contentsline {section}{\numberline {31}Displaying Target Shapes}{86}
+\contentsline {subsection}{\numberline {31.1}VTRCONVERT}{86}
+\contentsline {subsection}{\numberline {31.2} What is VTK?}{86}
+\contentsline {subsection}{\numberline {31.3}How to plot shapes once you have VTR/PVD files.}{86}
+\contentsline {section}{\numberline {32}Visualization of the Electric Field }{88}
+\contentsline {section}{\numberline {33}Finale}{89}
+\contentsline {section}{\numberline {34}Acknowledgments}{90}
+\contentsline {section}{\numberline {A}Understanding and Modifying {\tt ddscat.par}}{93}
+\contentsline {section}{\numberline {B}{\tt w{\it xxx}r{\it yyy}.avg} Files}{95}
+\contentsline {section}{\numberline {C} w{\it xxx}r{\it yyy}k{\it zzz}.sca Files }{97}
+\contentsline {section}{\numberline {D}{\tt w{\it xxx}r{\it yyy}k{\it zzz}.pol{\it n}} Files }{99}
+\contentsline {section}{\numberline {E}{w{\it xxx}r{\it yyy}k{\it zzz}.E{\it n}} Files }{99}
+\contentsline {section}{\numberline {F}{w{\it xxx}r{\it yyy}k{\it zzz}.EB{\it n}} Files }{99}
+\contentsline {section}{Index}{100}

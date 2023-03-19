@@ -1,0 +1,99 @@
+/* main Furo sphinx theme */
+
+body {
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+
+h1 {
+    font-size: 200%;
+    color: var(--color-brand-primary);
+}
+
+h2 {
+    font-size: 180%;
+    color: var(--color-brand-secondary)
+}
+
+
+.brand {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: var(--font-stack--monospace);
+}
+
+
+.headerlink {
+    color: #bebebe;
+    text-decoration: none;
+}
+
+
+.headerlink:hover {
+    color: #5a5a5a;
+    text-decoration: none;
+}
+
+/* spinx gallery */
+
+
+.sphx-glr-thumbcontainer:hover {
+    border-color: #d90021;
+}
+
+.sphx-glr-download-link-note.admonition.note {
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.reference.download.internal {
+    font-weight: 400;
+    color: inherit;
+    background: #3b3b3b;
+}
+
+.reference.download.internal:hover {
+    background: #595959;
+}
+
+.sphx-glr-download {
+    color: white;
+}
+
+.sphx-glr-thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.sphx-glr-thumbcontainer img {
+    display: inline;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.sphx-glr-footer.sphx-glr-footer-gallery.docutils.container {
+    padding-top: 20px;
+}
+
+.sphx-glr-thumbcontainer[tooltip]:hover::after {
+    background: #48101080;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 40% 10px 10px 10px;
+}
+.sphx-glr-thumbnail-title {
+    font-weight: 400;
+    text-transform: uppercase;
+  }

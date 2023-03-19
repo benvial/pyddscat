@@ -1,0 +1,11 @@
+
+build:
+    make html
+
+autobuild:
+    sphinx-autobuild . _build/html --port 8001 --re-ignore='examples/*'
+
+
+clean:
+    make clean
+    rm -rf examples generated

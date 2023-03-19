@@ -1,0 +1,31 @@
+img {
+    max-width: 100%!important;
+    width: 100%!important;
+    padding: 20px;
+  }
+
+  .bg-dark {
+    background-color: #27967c !important;
+  }
+
+  .btn-outline-info:hover {
+    color: #fff;
+    background-color: #41b096 !important;
+    background-color: #41b096 !important;
+  }
+
+  .btn.btn-outline-info.my-2.my-sm-0 {
+    color: #ffffff63;
+    border: 1px solid #ffffff63;
+}
+
+
+a{
+    color: #27967c;
+}
+a:hover {
+    color: #41b096;
+}
+.toc-entry a:hover {
+    color: #27967c;
+  }

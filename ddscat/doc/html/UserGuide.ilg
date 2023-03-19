@@ -1,0 +1,9 @@
+This is makeindex, version 2.16 [TeX Live 2022] (kpathsea + Thai support).
+Scanning input file UserGuide.idx....
+!! Input index error (file = UserGuide.idx, line = 239):
+   -- Extra `!' at position 37 of first argument.
+done (271 entries accepted, 1 rejected).
+Sorting entries.....done (2266 comparisons).
+Generating output file UserGuide.ind....done (290 lines written, 0 warnings).
+Output written in UserGuide.ind.
+Transcript written in UserGuide.ilg.

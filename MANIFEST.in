@@ -1,0 +1,6 @@
+include *.txt
+prune bin
+recursive-include doc *
+prune doc/_build
+include Makefile
+recursive-include ddscat *

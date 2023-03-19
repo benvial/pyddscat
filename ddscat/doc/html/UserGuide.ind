@@ -1,0 +1,290 @@
+\begin{theindex}
+
+  \item $Q_\abs$, 8
+  \item $Q_\ext$, 8
+  \item $Q_\sca$, 8
+  \item $Q_{\rm pha}$, 8
+  \item $S_j$ -- scattering amplitude matrix, 70
+  \item $S_{ij}$ -- 4$\times$4 Mueller scattering matrix, 70, 72, 73
+  \item $S_{j}$ -- scattering amplitude matrix, 71
+  \item $\Phi$ -- target orientation angle, 20, 30
+  \item $\Phi_\DF$, 46, 76
+  \item $\Theta$ -- target orientation angle, 20, 30
+  \item $\Theta_\DF$, 46, 76
+  \item $\beta$ -- target orientation angle, 20, 30
+  \item $\beta_\DF$, 46, 76
+  \item $\eta$ -- parameter for choosing scattering angles, 69
+  \item $\eta$ -- parameter for selection of scattering angles, 68
+  \item $\hat{\bf a}_1$, $\hat{\bf a}_2$ target vectors, 20
+  \item $\phi_s$ -- scattering angle, 63, 68
+  \item $\theta_s$ -- scattering angle, 63, 68
+  \item $a_{\rm eff}$, 5, 20
+  \item $f_{ij}$ -- amplitude scattering matrix, 70
+  \item $f_{ij}$ -- scattering amplitude matrix, 71
+  \item ${\bf Q}_\Gamma$ -- radiative torque efficiency vector, 29
+  \item ${\bf Q}_{\rm pr}$ -- radiative force efficiency vector, 29
+  \item {\tt OMP\_NUM\_THREADS}, 13
+
+  \indexspace
+
+  \item absorption efficiency factor $Q_\abs$, 8
+  \item ambient medium
+    \subitem refractive index, 19
+  \item averages over scattering angles, 66
+
+  \indexspace
+
+  \item CALLTARGET, 47
+  \item CALLTARGET and PBC, 48
+  \item Clausius-Mossotti relation, 77
+  \item CMDFFT -- specifying FFT method, 89
+  \item CMDFRM -- specifying scattering directions, 63, 89
+  \item compiling and linking, 11
+  \item conjugate gradient algorithm, 24
+
+  \indexspace
+
+  \item DDA method, 26
+  \item DDPOSTPROCESS.f90, 79
+  \item ddpostprocess.par, 79, 80
+  \item ddscat.log\_000 -- output file, 23
+  \item ddscat.out, 23
+  \item ddscat.par
+    \subitem ALLBIN, 24
+    \subitem CSHAPE, 34
+    \subitem diel.tab, 18
+    \subitem DOTORQ, 29
+    \subitem ETASCA, 29
+    \subitem FLTRCD, 27
+    \subitem GAMMA, 19
+    \subitem GKDLDR, 18, 26
+    \subitem GPFAFT, 18
+    \subitem IORTH, 70, 74
+    \subitem IWRKSC, 23
+    \subitem LATTDR, 18, 26, 27
+    \subitem MXITER, 19
+    \subitem NOTBIN, 18
+    \subitem NRFLD, 18
+    \subitem ORIBIN, 24
+    \subitem PBCGST, 25
+    \subitem PETRKP, 25
+    \subitem SHPAR$_1$,SHPAR$_2$,..., 34
+    \subitem TOL, 24
+  \item ddscat.par -- BETAMI,BETAMX,NBETA, 32
+  \item ddscat.par -- PHIMIN,PHIMAX,NPHI, 32
+  \item ddscat.par -- THETMI,THETMX,NTHETA, 32
+  \item ddscat.par parameter file, 17
+  \item diel.tab -- see ddscat.par, 18
+  \item Dielectric Frame (DF), 37, 46, 76
+  \item dielectric function of target material, 27
+  \item dielectric medium, 9
+  \item dielectric tensor, 76
+  \item differential scattering cross section $dC_\sca/d\Omega$, 73
+  \item DOTORQ, 29
+
+  \indexspace
+
+  \item effective radius $\aeff$, 5, 20
+  \item Electric field within or near the target, 77
+  \item ELLIPSOID, 41
+  \item error tolerance, 24
+  \item ESELF, 86
+  \item ETASCA, 29
+  \item extinction efficiency factor $Q_\ext$, 8
+
+  \indexspace
+
+  \item FFT algorithm, 25
+  \item FFTW, 25
+  \item Filtered Coupled Dipole method, 26
+  \item FLTRCD, 26
+  \item FLTRCD -- filtered coupled dipole method, 27
+  \item Fortran compiler
+    \subitem optimization, 12
+
+  \indexspace
+
+  \item GAMMA -- see ddscat.par, 19
+  \item GKDLDR, 26
+  \item GKDLDR -- see ddscat.par, 18
+  \item GPFA, 25
+  \item GPFAFT, 54
+  \item GPFAFT -- see ddscat.par, 18
+  \item GPFAPACK, 86
+
+  \indexspace
+
+  \item IDVERR, 14
+  \item IDVOUT, 14
+  \item infinite cylinder, 50
+  \item infinite hexagonal column, 54
+  \item IORTH, 74
+  \item IORTH parameter, 70
+  \item iterative algorithm, 24
+  \item IWRKSC -- see ddscat.par, 23
+
+  \indexspace
+
+  \item Lab Frame, 30
+  \item Lab Frame (LF), 30
+  \item LATTDR, 26, 27
+  \item LATTDR -- see ddscat.par, 18
+  \item LFRAME, 63
+
+  \indexspace
+
+  \item macroscopic $\bE_{\rm macro}$ vs. microscopic $\bE_{\rm micro}$, 
+		77
+  \item Magnetic field within or near the target, 77
+  \item MayaVi, 82
+  \item memory requirements, 29, 30
+  \item microscopic $\bE_{\rm micro}$ vs. macroscopic $\bE_{\rm macro}$, 
+		77
+  \item Microsoft\textsuperscript{\textregistered}, 11
+  \item MKL
+    \subitem Intel\textsuperscript  {\textregistered }\ MKL
+      \subsubitem DFTI, 13
+  \item MPI -- Message Passing Interface, 14
+    \subitem code execution, 22
+  \item mtable -- output file, 23
+  \item Mueller matrix for infinite targets, periodic in 1-d, 75
+  \item Mueller matrix for infinite targets, periodic in 2-d, 75
+  \item Mueller matrix for scattering, 70, 72, 73
+  \item MXITER -- see ddscat.par, 19
+  \item MXNX,MXNY,MXNZ, 29
+
+  \indexspace
+
+  \item NAMBIENT, 19
+  \item NCOMP
+    \subitem ddscat.par, 18
+  \item nearfield calculation, 18
+  \item NOTBIN -- see ddscat.par, 18
+  \item NRFLD, 77
+
+  \indexspace
+
+  \item OpenMP, 13
+  \item orientational averaging, 33
+    \subitem nonrandomly-oriented targets, 33
+    \subitem randomly-oriented targets, 33
+  \item orientational sampling in $\beta$, $\Theta$, and $\Phi$, 32
+
+  \indexspace
+
+  \item Paraview, 82
+  \item PBC = periodic boundary conditions, 65
+  \item PBCGST algorithm, 25
+  \item periodic boundary conditions, 49, 51--54, 56, 58, 60, 61
+  \item PETRKP algorithm, 25
+  \item phase lag efficiency factor $Q_{\rm pha}$, 8
+  \item PIM package, 25
+  \item polarizabilities
+    \subitem GKDLDR, 26
+    \subitem LATTDR, 27
+  \item polarization -- elliptical, 70
+  \item polarization of incident radiation, 66
+  \item polarization of scattered radiation, 72, 73
+  \item postprocessing, 79
+  \item precision: single vs. double, 12
+  \item PYD, 50, 53, 64, 65
+  \item PZD, 50, 53, 65
+
+  \indexspace
+
+  \item qtable -- output file, 23
+  \item qtable2 -- output file, 23
+  \item qtable2 file, 23
+
+  \indexspace
+
+  \item radiative force efficiency vector ${\bf Q}_{\rm pr}$, 29
+  \item radiative torque efficiency vector ${\bf Q}_\Gamma$, 29
+  \item refractive index of target material, 27
+  \item relative dielectric function, 9
+  \item relative refractive index, 9
+
+  \indexspace
+
+  \item scattering -- angular averages, 66
+  \item scattering angles $\theta_s$, $\phi_s$, 68
+  \item scattering by tilted cube, 66
+  \item scattering directions, 63
+  \item scattering efficiency factor $Q_\sca$, 8
+  \item SCATTERLIB, 85
+  \item size parameter $x=ka_{\rm eff}$, 5
+  \item source code (downloading of), 11
+  \item Stokes vector $(I,Q,U,V)$, 71
+
+  \indexspace
+
+  \item Target Frame, 30, 32, 75
+  \item Target Frame (TF), 30
+  \item target generation, 34
+  \item target generation: infinite periodic targets, 48
+  \item target orientation, 30
+  \item target routines: modifying, 47
+  \item target shape options
+    \subitem ANI\_ELL\_2, 38
+    \subitem ANI\_ELL\_3, 38
+    \subitem ANIELLIPS, 38
+    \subitem ANIFILPBC, 49
+    \subitem ANIFRMFIL, 36
+    \subitem ANIRCTNGL, 38
+    \subitem BISLINPBC, 49
+    \subitem CONELLIPS, 39
+    \subitem CYLINDER1, 39
+    \subitem CYLNDRCAP, 40
+    \subitem CYLNDRPBC, 49
+    \subitem DSKBLYPBC, 51
+    \subitem DSKRCTNGL, 40
+    \subitem DSKRCTPBC, 52
+    \subitem DW1996TAR, 41
+    \subitem ELLIPSO\_2, 42
+    \subitem ELLIPSO\_3, 42
+    \subitem ELLIPSOID, 41
+    \subitem FRMFILPBC, 48
+    \subitem FROM\_FILE, 35
+    \subitem HEX\_PRISM, 42
+    \subitem HEXGONPBC, 53
+    \subitem LAYRDSLAB, 43
+    \subitem LYRSLBPBC, 54
+    \subitem MLTBLOCKS, 43
+    \subitem RCTGL\_PBC, 56
+    \subitem RCTGLBLK3, 44
+    \subitem RCTGLPRSM, 43
+    \subitem RECRECPBC, 58
+    \subitem SLAB\_HOLE, 44
+    \subitem SLBHOLPBC, 60
+    \subitem SPH\_ANI\_N, 46
+    \subitem SPHERES\_N, 44
+    \subitem SPHRN\_PBC, 61
+    \subitem SPHROID\_2, 45
+    \subitem TETRAHDRN, 47
+    \subitem TRILYRPBC, 62
+    \subitem TRNGLPRSM, 47
+    \subitem UNIAXICYL, 47
+  \item target.out -- output file, 48
+  \item TFRAME, 63
+
+  \indexspace
+
+  \item Vista, 11
+  \item visualization, 79, 82
+    \subitem MayaVi, 82
+    \subitem ParaView, 82
+    \subitem Paraview, 82
+    \subitem VTK: Visualization ToolKit, 82
+  \item VTK: Visualization ToolKit, 82
+  \item VTRCONVERT, 82
+
+  \indexspace
+
+  \item w000r000k0.sca -- output file, 23
+  \item w000r000k000.pol{\it n} -- output file, 23
+  \item w000r000k000.sca -- output file, 23
+  \item w000r000ori.avg -- output file, 23
+  \item w000r000ori.avg file -- output file, 23
+  \item Windows 7, 11
+
+\end{theindex}

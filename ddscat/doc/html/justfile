@@ -1,0 +1,7 @@
+
+
+html:
+    pandoc -f latex UserGuide.tex -t html5 -o UserGuide.html \\
+    --toc --toc-depth 1 --mathjax  --template template.html \\
+    --include-in-header header.html --include-before-body navbar.html \\
+    --include-after-body footer.html --standalone

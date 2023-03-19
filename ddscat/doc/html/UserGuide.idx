@@ -1,0 +1,272 @@
+\indexentry{effective radius $\aeff$}{9}
+\indexentry{$a_{\rm eff}$}{9}
+\indexentry{size parameter $x=ka_{\rm eff}$}{9}
+\indexentry{absorption efficiency factor $Q_\abs$}{11}
+\indexentry{$Q_\abs$}{11}
+\indexentry{scattering efficiency factor $Q_\sca$}{11}
+\indexentry{$Q_\sca$}{11}
+\indexentry{extinction efficiency factor $Q_\ext$}{11}
+\indexentry{$Q_\ext$}{11}
+\indexentry{phase lag efficiency factor $Q_{\rm pha}$}{11}
+\indexentry{$Q_{\rm pha}$}{11}
+\indexentry{dielectric medium}{12}
+\indexentry{relative dielectric function}{12}
+\indexentry{relative refractive index}{12}
+\indexentry{Microsoft\textsuperscript{\textregistered}}{14}
+\indexentry{Vista}{14}
+\indexentry{Windows 7}{14}
+\indexentry{source code (downloading of)}{14}
+\indexentry{compiling and linking}{15}
+\indexentry{compiling and linking}{15}
+\indexentry{Fortran compiler!optimization}{16}
+\indexentry{precision: single vs. double}{16}
+\indexentry{OpenMP}{16}
+\indexentry{{\tt OMP\_NUM\_THREADS}}{16}
+\indexentry{MKL!Intel\textsuperscript  {\textregistered }\ MKL!DFTI}{17}
+\indexentry{MPI -- Message Passing Interface}{17}
+\indexentry{IDVOUT}{18}
+\indexentry{IDVERR}{18}
+\indexentry{ddscat.par parameter file}{20}
+\indexentry{GPFAFT -- see ddscat.par}{21}
+\indexentry{ddscat.par!GPFAFT}{21}
+\indexentry{GKDLDR -- see ddscat.par}{21}
+\indexentry{LATTDR -- see ddscat.par}{21}
+\indexentry{ddscat.par!GKDLDR}{21}
+\indexentry{ddscat.par!LATTDR}{21}
+\indexentry{NOTBIN -- see ddscat.par}{21}
+\indexentry{ddscat.par!NOTBIN}{21}
+\indexentry{NCOMP!ddscat.par}{22}
+\indexentry{diel.tab -- see ddscat.par}{22}
+\indexentry{ddscat.par!diel.tab}{22}
+\indexentry{nearfield calculation}{22}
+\indexentry{ddscat.par!NRFLD}{22}
+\indexentry{MXITER -- see ddscat.par}{22}
+\indexentry{ddscat.par!MXITER}{22}
+\indexentry{GAMMA -- see ddscat.par}{22}
+\indexentry{ddscat.par!GAMMA}{22}
+\indexentry{ambient medium!refractive index}{23}
+\indexentry{NAMBIENT}{23}
+\indexentry{effective radius $\aeff$}{23}
+\indexentry{$a_{\rm eff}$}{23}
+\indexentry{$\hat{\bf a}_1$, $\hat{\bf a}_2$ target vectors}{24}
+\indexentry{$\Theta$ -- target orientation angle}{24}
+\indexentry{$\Phi$ -- target orientation angle}{24}
+\indexentry{$\beta$ -- target orientation angle}{24}
+\indexentry{MPI -- Message Passing Interface!code execution}{25}
+\indexentry{ddscat.out}{26}
+\indexentry{mtable -- output file}{26}
+\indexentry{qtable -- output file}{26}
+\indexentry{qtable2 file}{26}
+\indexentry{w000r000ori.avg file -- output file}{26}
+\indexentry{w000r000k000.sca -- output file}{26}
+\indexentry{w000r000k000.pol{\it n} -- output file}{26}
+\indexentry{ddscat.log\_000 -- output file}{26}
+\indexentry{mtable -- output file}{27}
+\indexentry{qtable -- output file}{27}
+\indexentry{qtable2 -- output file}{27}
+\indexentry{w000r000ori.avg -- output file}{27}
+\indexentry{IWRKSC -- see ddscat.par}{27}
+\indexentry{ddscat.par!IWRKSC}{27}
+\indexentry{w000r000k0.sca -- output file}{27}
+\indexentry{ddscat.par!ORIBIN}{27}
+\indexentry{ddscat.par!ALLBIN}{27}
+\indexentry{iterative algorithm}{27}
+\indexentry{conjugate gradient algorithm}{27}
+\indexentry{error tolerance}{28}
+\indexentry{ddscat.par!TOL}{28}
+\indexentry{PBCGST algorithm}{28}
+\indexentry{ddscat.par!PBCGST}{28}
+\indexentry{PIM package}{28}
+\indexentry{PETRKP algorithm}{28}
+\indexentry{ddscat.par!PETRKP}{28}
+\indexentry{FFT algorithm}{29}
+\indexentry{FFTW}{29}
+\indexentry{GPFA}{29}
+\indexentry{DDA method}{30}
+\indexentry{Filtered Coupled Dipole method}{30}
+\indexentry{FLTRCD}{30}
+\indexentry{LATTDR}{30}
+\indexentry{GKDLDR}{30}
+\indexentry{ddscat.par!LATTDR}{30}
+\indexentry{ddscat.par!GKDLDR}{30}
+\indexentry{GKDLDR}{30}
+\indexentry{polarizabilities!GKDLDR}{30}
+\indexentry{ddscat.par!GKDLDR}{30}
+\indexentry{LATTDR}{30}
+\indexentry{polarizabilities!LATTDR}{30}
+\indexentry{ddscat.par!LATTDR}{30}
+\indexentry{ddscat.par!FLTRCD}{30}
+\indexentry{FLTRCD -- filtered coupled dipole method}{30}
+\indexentry{dielectric function of target material}{31}
+\indexentry{refractive index of target material}{31}
+\indexentry{DOTORQ}{32}
+\indexentry{ddscat.par!DOTORQ}{32}
+\indexentry{radiative force efficiency vector ${\bf Q}_{\rm pr}$}{32}
+\indexentry{radiative torque efficiency vector ${\bf Q}_\Gamma$}{32}
+\indexentry{${\bf Q}_{\rm pr}$ -- radiative force efficiency vector}{32}
+\indexentry{${\bf Q}_\Gamma$ -- radiative torque efficiency vector}{32}
+\indexentry{ETASCA}{33}
+\indexentry{ddscat.par!ETASCA}{33}
+\indexentry{memory requirements}{33}
+\indexentry{MXNX,MXNY,MXNZ}{33}
+\indexentry{memory requirements}{33}
+\indexentry{Target Frame}{33}
+\indexentry{target orientation}{33}
+\indexentry{Lab Frame (LF)}{33}
+\indexentry{Target Frame (TF)}{34}
+\indexentry{target orientation}{34}
+\indexentry{Lab Frame}{34}
+\indexentry{$\Theta$ -- target orientation angle}{34}
+\indexentry{$\Phi$ -- target orientation angle}{34}
+\indexentry{$\beta$ -- target orientation angle}{34}
+\indexentry{Target Frame}{35}
+\indexentry{orientational sampling in $\beta$, $\Theta$, and $\Phi$}{35}
+\indexentry{ddscat.par -- BETAMI,BETAMX,NBETA}{35}
+\indexentry{ddscat.par -- THETMI,THETMX,NTHETA}{35}
+\indexentry{ddscat.par -- PHIMIN,PHIMAX,NPHI}{35}
+\indexentry{orientational averaging}{36}
+\indexentry{orientational averaging!randomly-oriented targets}{36}
+\indexentry{orientational averaging!nonrandomly-oriented targets}{36}
+\indexentry{target generation}{37}
+\indexentry{ddscat.par!CSHAPE}{37}
+\indexentry{ddscat.par!SHPAR$_1$,SHPAR$_2$,...}{37}
+\indexentry{target shape options!FROM\_FILE}{38}
+\indexentry{target shape options!ANIFRMFIL}{40}
+\indexentry{Dielectric Frame (DF)}{40}
+\indexentry{target shape options!ANIELLIPS}{41}
+\indexentry{target shape options!ANI\_ELL\_2}{41}
+\indexentry{target shape options!ANI\_ELL\_3}{41}
+\indexentry{target shape options!ANIRCTNGL}{41}
+\indexentry{target shape options!CONELLIPS}{42}
+\indexentry{target shape options!CYLINDER1}{43}
+\indexentry{target shape options!CYLNDRCAP}{43}
+\indexentry{target shape options!DSKRCTNGL}{43}
+\indexentry{target shape options!DW1996TAR}{44}
+\indexentry{ELLIPSOID}{44}
+\indexentry{target shape options!ELLIPSOID}{44}
+\indexentry{target shape options!ELLIPSO\_2}{45}
+\indexentry{target shape options!ELLIPSO\_3}{45}
+\indexentry{target shape options!HEX\_PRISM}{46}
+\indexentry{target shape options!LAYRDSLAB}{46}
+\indexentry{target shape options!MLTBLOCKS}{46}
+\indexentry{target shape options!RCTGLPRSM}{46}
+\indexentry{target shape options!RCTGLBLK3}{47}
+\indexentry{target shape options!SLAB\_HOLE}{47}
+\indexentry{target shape options!SPHERES\_N}{47}
+\indexentry{target shape options!SPHROID\_2}{48}
+\indexentry{target shape options!SPH\_ANI\_N}{49}
+\indexentry{Dielectric Frame (DF)}{49}
+\indexentry{$\Theta_\DF$}{49}
+\indexentry{$\Phi_\DF$}{49}
+\indexentry{$\beta_\DF$}{49}
+\indexentry{target shape options!TETRAHDRN}{50}
+\indexentry{target shape options!TRNGLPRSM}{50}
+\indexentry{target shape options!UNIAXICYL}{50}
+\indexentry{target routines: modifying}{50}
+\indexentry{CALLTARGET}{51}
+\indexentry{target.out -- output file}{51}
+\indexentry{CALLTARGET and PBC}{51}
+\indexentry{target generation: infinite periodic targets}{51}
+\indexentry{target shape options!FRMFILPBC}{51}
+\indexentry{target shape options!ANIFILPBC}{52}
+\indexentry{target shape options!BISLINPBC}{52}
+\indexentry{target shape options!CYLNDRPBC}{53}
+\indexentry{periodic boundary conditions}{53}
+\indexentry{PYD}{53}
+\indexentry{PZD}{53}
+\indexentry{infinite cylinder}{53}
+\indexentry{target shape options!DSKBLYPBC}{54}
+\indexentry{periodic boundary conditions}{54}
+\indexentry{target shape options!DSKRCTPBC}{55}
+\indexentry{periodic boundary conditions}{55}
+\indexentry{target shape options!HEXGONPBC}{56}
+\indexentry{periodic boundary conditions}{56}
+\indexentry{PYD}{57}
+\indexentry{PZD}{57}
+\indexentry{infinite hexagonal column}{57}
+\indexentry{GPFAFT}{57}
+\indexentry{target shape options!LYRSLBPBC}{57}
+\indexentry{periodic boundary conditions}{57}
+\indexentry{target shape options!RCTGL\_PBC}{59}
+\indexentry{periodic boundary conditions}{59}
+\indexentry{target shape options!RECRECPBC}{61}
+\indexentry{periodic boundary conditions}{61}
+\indexentry{target shape options!SLBHOLPBC}{63}
+\indexentry{periodic boundary conditions}{63}
+\indexentry{target shape options!SPHRN\_PBC}{64}
+\indexentry{periodic boundary conditions}{64}
+\indexentry{target shape options!TRILYRPBC}{65}
+\indexentry{scattering directions}{66}
+\indexentry{$\theta_s$ -- scattering angle}{66}
+\indexentry{$\phi_s$ -- scattering angle}{66}
+\indexentry{CMDFRM -- specifying scattering directions}{66}
+\indexentry{LFRAME}{66}
+\indexentry{TFRAME}{66}
+\indexentry{PYD}{67}
+\indexentry{PBC = periodic boundary conditions}{68}
+\indexentry{PYD}{68}
+\indexentry{PZD}{68}
+\indexentry{polarization of incident radiation}{69}
+\indexentry{averages over scattering angles}{69}
+\indexentry{scattering -- angular averages}{69}
+\indexentry{scattering by tilted cube}{69}
+\indexentry{scattering angles $\theta_s$, $\phi_s$}{70}
+\indexentry{$\theta_s$ -- scattering angle}{70}
+\indexentry{$\phi_s$ -- scattering angle}{70}
+\indexentry{$\eta$ -- parameter for selection of scattering angles}{71}
+\indexentry{$\eta$ -- parameter for choosing scattering angles}{72}
+\indexentry{Mueller matrix for scattering}{72}
+\indexentry{$S_{ij}$ -- 4$\times$4 Mueller scattering matrix}{72}
+\indexentry{IORTH parameter}{72}
+\indexentry{ddscat.par!IORTH}{72}
+\indexentry{$f_{ij}$ -- amplitude scattering matrix}{73}
+\indexentry{$S_j$ -- scattering amplitude matrix}{73}
+\indexentry{polarization -- elliptical}{73}
+\indexentry{$f_{ij}$ -- scattering amplitude matrix}{73}
+\indexentry{$S_{j}$ -- scattering amplitude matrix}{73}
+\indexentry{Stokes vector $(I,Q,U,V)$}{74}
+\indexentry{Mueller matrix for scattering}{74}
+\indexentry{$S_{ij}$ -- 4$\times$4 Mueller scattering matrix}{74}
+\indexentry{polarization of scattered radiation}{75}
+\indexentry{Mueller matrix for scattering}{76}
+\indexentry{polarization of scattered radiation}{76}
+\indexentry{$S_{ij}$ -- 4$\times$4 Mueller scattering matrix}{76}
+\indexentry{differential scattering cross section $dC_\sca/d\Omega$}{76}
+\indexentry{IORTH}{77}
+\indexentry{ddscat.par!IORTH}{77}
+\indexentry{Mueller matrix for infinite targets, periodic in 1-d}{77}
+\indexentry{Mueller matrix for infinite targets, periodic in 2-d}{77}
+\indexentry{anisotropic materials!BETADF!THETADF!PHIDF!Dielectric Frame (DF)}{78}
+\indexentry{Target Frame}{78}
+\indexentry{dielectric tensor}{78}
+\indexentry{Dielectric Frame (DF)}{79}
+\indexentry{$\Theta_\DF$}{79}
+\indexentry{$\Phi_\DF$}{79}
+\indexentry{$\beta_\DF$}{79}
+\indexentry{Electric field within or near the target}{80}
+\indexentry{Magnetic field within or near the target}{80}
+\indexentry{macroscopic $\bE_{\rm macro}$ vs. microscopic $\bE_{\rm micro}$}{80}
+\indexentry{microscopic $\bE_{\rm micro}$ vs. macroscopic $\bE_{\rm macro}$}{80}
+\indexentry{Clausius-Mossotti relation}{80}
+\indexentry{NRFLD}{80}
+\indexentry{DDPOSTPROCESS.f90}{82}
+\indexentry{postprocessing}{82}
+\indexentry{visualization}{82}
+\indexentry{ddpostprocess.par}{82}
+\indexentry{ddpostprocess.par}{82}
+\indexentry{visualization}{85}
+\indexentry{VTRCONVERT}{85}
+\indexentry{visualization!VTK: Visualization ToolKit}{85}
+\indexentry{VTK: Visualization ToolKit}{85}
+\indexentry{Paraview}{85}
+\indexentry{visualization!Paraview}{85}
+\indexentry{MayaVi}{85}
+\indexentry{visualization!MayaVi}{85}
+\indexentry{Paraview}{85}
+\indexentry{visualization!ParaView}{85}
+\indexentry{visualization!VTK: Visualization ToolKit}{85}
+\indexentry{SCATTERLIB}{88}
+\indexentry{ESELF}{89}
+\indexentry{GPFAPACK}{89}
+\indexentry{CMDFFT -- specifying FFT method}{92}
+\indexentry{CMDFRM -- specifying scattering directions}{92}

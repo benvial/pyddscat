@@ -1,0 +1,190 @@
+\begin{thebibliography}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem[\protect\astroncite{Bohren \& Huffman}{1983}]{Bohren+Huffman_1983}
+Bohren, C.~F. \& Huffman, D.~R., 1983.
+\newblock \emph{Absorption and Scattering of Light by Small Particles}.
+\newblock New York: Wiley.
+
+\bibitem[\protect\astroncite{{Brenner}}{1969}]{Brenner_1969}
+{Brenner}, N.~M., 1969.
+\newblock \enquote{{Fast Fourier transform of externally stored data}}.
+\newblock \emph{\ieeetae}, 17, 128--132.
+
+\bibitem[\protect\astroncite{{Chaumet} \&
+  {Rahmani}}{2009}]{Chaumet+Rahmani_2009}
+{Chaumet}, P.~C. \& {Rahmani}, A., 2009.
+\newblock \enquote{{Efficient iterative solution of the discrete dipole
+  approximation for magnetodielectric scatterers}}.
+\newblock \emph{\optlett}, 34, 917--919.
+
+\bibitem[\protect\astroncite{{Collinge} \&
+  {Draine}}{2004}]{Collinge+Draine_2004}
+{Collinge}, M.~J. \& {Draine}, B.~T., 2004.
+\newblock \enquote{{Discrete dipole approximation with polarizabilities that
+  account for both finite wavelength and target geometry}}.
+\newblock \emph{\josaa}, 21, 2023--2028.
+
+\bibitem[\protect\astroncite{{Draine}}{1988}]{Draine_1988}
+{Draine}, B.~T., 1988.
+\newblock \enquote{{The Discrete-Dipole Approximation and its Application to
+  Interstellar Graphite Grains}}.
+\newblock \emph{\apj}, 333, 848--872.
+
+\bibitem[\protect\astroncite{{Draine}}{2000}]{Draine_2000a}
+---, 2000.
+\newblock \enquote{{The Discrete Dipole Approximation for Light Scattering by
+  Irregular Targets}}.
+\newblock In M.~I. Mishchenko, J.~W. Hovenier, \& L.~D. Travis, eds.,
+  \enquote{Light Scattering by Nonspherical Particles: Theory, Measurements,
+  and Applications}, pp. 131--145. San Diego: Academic Press.
+
+\bibitem[\protect\astroncite{{Draine}}{2003}]{Draine_2003b}
+---, 2003.
+\newblock \enquote{{Scattering by Interstellar Dust Grains. I. Optical and
+  Ultraviolet}}.
+\newblock \emph{\apj}, 598, 1017--1025.
+
+\bibitem[\protect\astroncite{{Draine} \& {Flatau}}{1994}]{Draine+Flatau_1994}
+{Draine}, B.~T. \& {Flatau}, P.~J., 1994.
+\newblock \enquote{{Discrete-dipole approximation for scattering
+  calculations}}.
+\newblock \emph{\josaa}, 11, 1491--1499.
+
+\bibitem[\protect\astroncite{{Draine} \& {Flatau}}{2008}]{Draine+Flatau_2008a}
+---, 2008.
+\newblock \enquote{{Discrete dipole approximation for periodic targets: I.
+  Theory and tests}}.
+\newblock \emph{\josaa}, 25, 2693--2703.
+
+\bibitem[\protect\astroncite{{Draine} \& {Goodman}}{1993}]{Draine+Goodman_1993}
+{Draine}, B.~T. \& {Goodman}, J., 1993.
+\newblock \enquote{{Beyond Clausius-Mossotti - Wave Propagation on a
+  Polarizable Point Lattice and the Discrete Dipole Approximation}}.
+\newblock \emph{\apj}, 405, 685--697.
+
+\bibitem[\protect\astroncite{{Draine} \&
+  {Weingartner}}{1996}]{Draine+Weingartner_1996}
+{Draine}, B.~T. \& {Weingartner}, J.~C., 1996.
+\newblock \enquote{{Radiative Torques on Interstellar Grains. I. Superthermal
+  Spin-up}}.
+\newblock \emph{\apj}, 470, 551--565.
+
+\bibitem[\protect\astroncite{{Flatau}}{1997}]{Flatau_1997}
+{Flatau}, P.~J., 1997.
+\newblock \enquote{{Improvements in the discrete-dipole approximation method of
+  computing scattering and absorption}}.
+\newblock \emph{\optlett}, 22, 1205--1207.
+
+\bibitem[\protect\astroncite{{Flatau} \& {Draine}}{2012}]{Flatau+Draine_2012}
+{Flatau}, P.~J. \& {Draine}, B.~T., 2012.
+\newblock \enquote{{Fast near-field calculations in the discrete dipole
+  approximation for regular rectilinear grids}}.
+\newblock \emph{\optex}, 20, 1247--1252.
+
+\bibitem[\protect\astroncite{{Gay-Balmaz} \&
+  {Martin}}{2002}]{Gay-Balmaz+Martin_2002}
+{Gay-Balmaz}, P. \& {Martin}, O.~J.~F., 2002.
+\newblock \enquote{{A library for computing the filtered and non-filtered 3D
+  Green's tensor associated with infinite homogeneous space and surfaces}}.
+\newblock \emph{\compphyscomm}, 144, 111--120.
+
+\bibitem[\protect\astroncite{{Goodman}
+  et~al.}{1990}]{Goodman+Draine+Flatau_1990}
+{Goodman}, J.~J., {Draine}, B.~T., \& {Flatau}, P.~J., 1990.
+\newblock \enquote{{Application of fast-Fourier transform techniques to the
+  discrete dipole approximation}}.
+\newblock \emph{\optlett}, 16, 1198--1200.
+
+\bibitem[\protect\astroncite{{Gutkowicz-Krusin} \&
+  {Draine}}{2004}]{Gutkowicz-Krusin+Draine_2004}
+{Gutkowicz-Krusin}, D. \& {Draine}, B.~T., 2004.
+\newblock \enquote{{Propagation of Electromagnetic Waves on a Rectangular
+  Lattice of Polarizable Points}}.
+\newblock \emph{ArXiv e-prints}, http://arXiv.org/abs/astro-ph/0403082.
+
+\bibitem[\protect\astroncite{{Jackson}}{1975}]{Jackson_1975}
+{Jackson}, J.~D., 1975.
+\newblock \emph{{Classical electrodynamics, 2nd ed.}}
+\newblock New York: Wiley.
+
+\bibitem[\protect\astroncite{{Petravic} \&
+  {Kuo-Petravic}}{1979}]{Petravic+Kuo-Petravic_1979}
+{Petravic}, M. \& {Kuo-Petravic}, G., 1979.
+\newblock \enquote{{An ILUCG Algorithm Which Minimizes in the Euclidean Norm}}.
+\newblock \emph{Journal of Computational Physics}, 32, 263--269.
+
+\bibitem[\protect\astroncite{{Piller} \& {Martin}}{1998}]{Piller+Martin_1998}
+{Piller}, N.~B. \& {Martin}, O.~J.~F., 1998.
+\newblock \enquote{{Increasing the performance of the coupled-dipole
+  approximation: a spectral approach}}.
+\newblock \emph{IEEE Transactions on Antennas and Propagation}, 46, 1126--1137.
+
+\bibitem[\protect\astroncite{{Purcell} \&
+  {Pennypacker}}{1973}]{Purcell+Pennypacker_1973}
+{Purcell}, E.~M. \& {Pennypacker}, C.~R., 1973.
+\newblock \enquote{{Scattering and Absorption of Light by Nonspherical
+  Dielectric Grains}}.
+\newblock \emph{\apj}, 186, 705--714.
+
+\bibitem[\protect\astroncite{{Shen} et~al.}{2008}]{Shen+Draine+Johnson_2008}
+{Shen}, Y., {Draine}, B.~T., \& {Johnson}, E.~T., 2008.
+\newblock \enquote{{Modeling Porous Dust Grains with Ballistic Aggregates I.
+  Methods and Basic Results}}.
+\newblock \emph{\apj}, 689, 260--275.
+
+\bibitem[\protect\astroncite{{Sleijpen} \&
+  {Fokkema}}{1993}]{Sleijpen+Fokkema_1993}
+{Sleijpen}, G.~L.~G. \& {Fokkema}, D.~R., 1993.
+\newblock \enquote{BiCGSTAB(L) for linear matrices involving unsymmetric
+  matrices with complex spectrum}.
+\newblock \emph{ETNA}, 1, 11--32.
+
+\bibitem[\protect\astroncite{{Sleijpen} \& {van der
+  Vorst}}{1995}]{Sleijpen+vanderVorst_1995}
+{Sleijpen}, G.~L.~G. \& {van der Vorst}, H.~A., 1995.
+\newblock \enquote{Maintaining convergence properties of BiCGstab methods in
+  finite precision arithmetic}.
+\newblock \emph{Numerical Algorithms}, 10, 203--223.
+
+\bibitem[\protect\astroncite{{Sleijpen} \& {van der
+  Vorst}}{1996}]{Sleijpen+vanderVorst_1996}
+---, 1996.
+\newblock \enquote{Reliable updated residuals in hybrid Bi-CG methods}.
+\newblock \emph{Computing}, 56, 141--163.
+
+\bibitem[\protect\astroncite{{Tang} et~al.}{2004}]{Tang+Shen+Zheng+Qiu_2004}
+{Tang}, J., {Shen}, Y., {Zheng}, Y., \& {Qiu}, D., 2004.
+\newblock \enquote{{An efficient and flexible computational model for solving
+  the mild slope equation}}.
+\newblock \emph{Coastal Engineering}, 51, 143 -- 154.
+
+\bibitem[\protect\astroncite{{Temperton}}{1992}]{Temperton_1992}
+{Temperton}, C., 1992.
+\newblock \enquote{{A Generalized Prime Factor FFT Algorithm for any
+  $N=2^p3^q5^r$}}.
+\newblock \emph{\siamjssc}, 13, 676--686.
+
+\bibitem[\protect\astroncite{{Van der Vorst}}{1992}]{van_der_Vorst_1992}
+{Van der Vorst}, H.~A., 1992.
+\newblock \enquote{{BI-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG
+  for the Solution of Nonsymmetric Linear Systems}}.
+\newblock \emph{\siamjssc}, 13, 631--644.
+
+\bibitem[\protect\astroncite{{Yurkin} et~al.}{2010}]{Yurkin+Min+Hoekstra_2010}
+{Yurkin}, M.~A., {Min}, M., \& {Hoekstra}, A.~G., 2010.
+\newblock \enquote{{Application of the discrete dipole approximation to very
+  large refractive indices: Filtered coupled dipoles revived}}.
+\newblock \emph{\pre}, 82, 036703.
+
+\bibitem[\protect\astroncite{Zhang}{1997}]{Zhang_1997}
+Zhang, S.-L., 1997.
+\newblock \enquote{GPBi-CG: Generalized Product-type Methods Based on Bi-CG for
+  Solving Nonsymmetric Linear Systems}.
+\newblock \emph{SIAM Journal on Scientific Computing}, 18, 537--551.
+\newblock \urlprefix\url{http://link.aip.org/link/?SCE/18/537/1}.
+
+\end{thebibliography}

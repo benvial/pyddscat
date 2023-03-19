@@ -1,0 +1,9 @@
+v0.1.0, 25.07.13 -- Initial Release
+    
+-Changed Target names so that they no longer are preceeded by 'Target_'.
+-Different profiles can be saved as .py script files. config.set_config() can be used
+to change the profile on the fly. Profiles are searched for in the CWD, the folder ~/.pyddscat,
+and the package directory.
+-Settings.IORTH is now a boolean: True calculates second polarization state.
+-Default job configurations are now loaded from a file default.par, found in the same
+search path as profiles.
