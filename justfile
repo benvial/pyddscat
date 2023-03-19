@@ -49,7 +49,7 @@ gl:
 	git add -A
 	@read -p "Enter commit message: " MSG; \
 	git commit -a -m "$MSG"
-	git push origin master
+	git push origin main
 
 # Clean, reformat and push to gitlab
 save: clean format gl
