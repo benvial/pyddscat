@@ -1,4 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 """
 For reading, manipulating and plotting the output files from DDSCAT
 
@@ -48,31 +53,31 @@ from . import utils
 #    return k * np.arctan(num/den)
 
 
-def molar_ellipticity(DeltaQ, a_eff, C, l=1):
+def molar_ellipticity(DeltaQ, a_eff, C, pathlength=1):
     """
     Calculate the molar ellipticity
 
     :param DeltaQ: Q difference spectra.
     :param a_eff: the effective radius (in um).
     :param C: the concentration in mol/l.
-    :param l: the pathlength in cm.
+    :param pathlength: the pathlength in cm.
     """
 
-    return ellipticity(DeltaQ, a_eff, C, l) * 100.0 / (C * l)
+    return ellipticity(DeltaQ, a_eff, C, pathlength) * 100.0 / (C * pathlength)
 
 
-def ellipticity_vol(DeltaQ, a_eff, C, l=1):
+def ellipticity_vol(DeltaQ, a_eff, C, pathlength=1):
     """
     Calculate the ellipticity in deg of a suspension
 
     :param DeltaQ: Q difference spectra.
     :param a_eff: the effective radius (in um).
     :param C: the concentration in mol/l.
-    :param l: the pathlength in cm.
+    :param pathlength: the pathlength in cm.
 
     """
 
-    return 2.71e14 * a_eff**2 * l * C * DeltaQ
+    return 2.71e14 * a_eff**2 * pathlength * C * DeltaQ
 
 
 def ellipticity_surf(DeltaQ, a_eff, rho):
@@ -95,8 +100,8 @@ def _dichroism_calculator(L, R):
     aligned.
     """
 
-    l = min(len(L), len(R))
-    return L[:l, ...] - R[:l, ...]
+    lmin = min(len(L), len(R))
+    return L[:lmin, ...] - R[:lmin, ...]
 
 
 # ===================================================================
@@ -352,26 +357,26 @@ class ResultTable(Table):
         hdr = "".join(f.readline() for _ in range(self.hdr_len))
         self.header = hdr
 
-        l = f.readline()
-        labels = split_string(l, self.c_width)
-        for i, l in enumerate(labels):
-            labels[i] = l.strip()
+        line = f.readline()
+        labels = split_string(line, self.c_width)
+        for i, line in enumerate(labels):
+            labels[i] = line.strip()
         self.col_lbl = labels
 
-        l = f.readline()
+        line = f.readline()
 
-        dat = np.asarray(list(map(float, split_string(l, self.c_width))))
+        dat = np.asarray(list(map(float, split_string(line, self.c_width))))
 
-        l = f.readline()
-        while l != "":
+        line = f.readline()
+        while line != "":
             dat = np.vstack(
-                [dat, np.asarray(list(map(float, split_string(l, self.c_width))))]
+                [dat, np.asarray(list(map(float, split_string(line, self.c_width))))]
             )
-            l = f.readline()
+            line = f.readline()
 
         self.data = dat
-        for l, d in zip(self.col_lbl, self.data.transpose()):
-            self[l] = d
+        for line, d in zip(self.col_lbl, self.data.transpose()):
+            self[line] = d
 
     def set_folder(self, new_folder):
         """
@@ -505,16 +510,16 @@ class AVGSummaryTable(Table):
         self.header = hdr
         hdr = hdr.splitlines()
 
-        l = hdr[9].split()
-        self.wave = float(l[1])
+        line = hdr[9].split()
+        self.wave = float(line[1])
 
-        l = hdr[17 + self.ncomps]
-        self["Epol"] = np.array(utils.str2complexV(l))
+        line = hdr[17 + self.ncomps]
+        self["Epol"] = np.array(utils.str2complexV(line))
 
-        l = hdr[27 + self.ncomps].split()
-        self["Q_ext"] = np.array(float(l[1]))
-        self["Q_abs"] = np.array(float(l[2]))
-        self["Q_sca"] = np.array(float(l[3]))
+        line = hdr[27 + self.ncomps].split()
+        self["Q_ext"] = np.array(float(line[1]))
+        self["Q_abs"] = np.array(float(line[2]))
+        self["Q_sca"] = np.array(float(line[3]))
 
     def _refresh_2pol(self, f):
         """
@@ -524,8 +529,8 @@ class AVGSummaryTable(Table):
         self.header = hdr
         hdr = hdr.splitlines()
 
-        l = hdr[9].split()
-        self.wave = float(l[1])
+        line = hdr[9].split()
+        self.wave = float(line[1])
 
         l1 = hdr[17 + self.ncomps]
         l2 = hdr[18 + self.ncomps]
@@ -562,8 +567,8 @@ class AVGSummaryTable(Table):
         CDabs = _dichroism_calculator(Qabs[a], Qabs[b])
         CDsca = _dichroism_calculator(Qsca[a], Qsca[b])
 
-        l = min(len(CDext), len(self.wave))
-        wave = self.wave[:l, ...]
+        lmin = min(len(CDext), len(self.wave))
+        wave = self.wave[:lmin, ...]
 
         return [wave, CDext, CDabs, CDsca]
 
@@ -629,23 +634,23 @@ class SCASummaryTable(Table):
         self.header = hdr
         hdr = hdr.splitlines()
 
-        l = hdr[12].split()
-        self.aeff = float(l[1])
+        line = hdr[12].split()
+        self.aeff = float(line[1])
 
-        l = hdr[13].split()
-        self.wave = float(l[1])
+        line = hdr[13].split()
+        self.wave = float(line[1])
 
         self.beta = float(hdr[29].split("=")[1])
         self.theta = float(hdr[30].split("=")[1])
         self.phi = float(hdr[31].split("=")[1])
 
-        l = hdr[27]
-        self["Epol"] = np.array(utils.str2complexV(l))
+        line = hdr[27]
+        self["Epol"] = np.array(utils.str2complexV(line))
 
-        l = hdr[34].split()
-        self["Q_ext"] = np.array(float(l[1]))
-        self["Q_abs"] = np.array(float(l[2]))
-        self["Q_sca"] = np.array(float(l[3]))
+        line = hdr[34].split()
+        self["Q_ext"] = np.array(float(line[1]))
+        self["Q_abs"] = np.array(float(line[2]))
+        self["Q_sca"] = np.array(float(line[3]))
 
     def _refresh_2pol(self, f):
         """
@@ -656,11 +661,11 @@ class SCASummaryTable(Table):
         self.header = hdr
         hdr = hdr.splitlines()
 
-        l = hdr[12].split()
-        self.aeff = float(l[1])
+        line = hdr[12].split()
+        self.aeff = float(line[1])
 
-        l = hdr[13].split()
-        self.wave = float(l[1])
+        line = hdr[13].split()
+        self.wave = float(line[1])
 
         self.beta = float(hdr[29].split("=")[1])
         self.theta = float(hdr[30].split("=")[1])
@@ -704,8 +709,8 @@ class SCASummaryTable(Table):
         CDabs = _dichroism_calculator(Qabs[a], Qabs[b])
         CDsca = _dichroism_calculator(Qsca[a], Qsca[b])
 
-        l = min(len(CDext), len(self.wave))
-        wave = self.wave[:l, ...]
+        lmin = min(len(CDext), len(self.wave))
+        wave = self.wave[:lmin, ...]
 
         return [self.wave, CDext, CDabs, CDsca]
 
@@ -715,8 +720,8 @@ def _find_header_len(fname, folder, search):
         fname = os.path.join(folder, fname)
 
     with open(fname) as f:
-        for i, l in enumerate(f):
-            if l.find(search) != -1:
+        for i, line in enumerate(f):
+            if line.find(search) != -1:
                 return i
 
 
@@ -808,34 +813,34 @@ class MInTable(ResultTable):
             hdr = "".join(f.readline() for _ in range(self.hdr_len))
             self.header = hdr
 
-            l = f.readline()
-            labels = l.split()
-            for i, l in enumerate(labels):
-                labels[i] = l.strip()
+            line = f.readline()
+            labels = line.split()
+            for i, line in enumerate(labels):
+                labels[i] = line.strip()
             self.col_lbl = labels
 
-            l = f.readline()
-            dat = np.asarray(list(map(float, l.split())))
-            l = f.readline()
-            while l != "":
-                dat = np.vstack([dat, np.asarray(list(map(float, l.split())))])
-                l = f.readline()
+            line = f.readline()
+            dat = np.asarray(list(map(float, line.split())))
+            line = f.readline()
+            while line != "":
+                dat = np.vstack([dat, np.asarray(list(map(float, line.split())))])
+                line = f.readline()
 
             self.data = dat
-            for l, d in zip(self.col_lbl, self.data.transpose()):
-                self[l] = d
+            for line, d in zip(self.col_lbl, self.data.transpose()):
+                self[line] = d
 
             self.interps = {}
-            for l in self.col_lbl[1:]:
-                cl = clean_string(l)
+            for line in self.col_lbl[1:]:
+                cl = clean_string(line)
                 step = 1 if self["wave"][0] < self["wave"][-1] else -1
-                self.interps[cl] = interp1d(self["wave"][::step], self[l][::step])
+                self.interps[cl] = interp1d(self["wave"][::step], self[line][::step])
 
     def __call__(self, wave):
         out = {}
-        for l in self.col_lbl[1:]:
-            l = clean_string(l)
-            out[l] = float(self.interps[l](wave))
+        for line in self.col_lbl[1:]:
+            line = clean_string(line)
+            out[line] = float(self.interps[line](wave))
 
         return out
 
@@ -881,14 +886,14 @@ class ShapeTable(dict):
         self.d = np.array(f.readline().split())
         self.offset = np.array(f.readline().split())
 
-        l = f.readline()
+        line = f.readline()
         self.col_lbl = ["JA", "IX", "IY", "IZ", "ICOMPx", "ICOMPy", "ICOMPz"]
 
         dat = np.loadtxt(f, np.int)
 
         self.data = dat
-        for l, d in zip(self.col_lbl, self.data.transpose()):
-            self[l] = d
+        for line, d in zip(self.col_lbl, self.data.transpose()):
+            self[line] = d
 
     def set_folder(self, new_folder):
         """
@@ -961,27 +966,29 @@ class TargetTable(ShapeTable):
         self.d = np.array(f.readline().split()[:3])
         self.offset = np.array(f.readline().split()[:3])
 
-        l = f.readline()
+        line = f.readline()
         self.col_lbl = ["JA", "IX", "IY", "IZ", "ICOMPx", "ICOMPy", "ICOMPz"]
 
         # Cannot use the faster np.loadtxt technique used by ShapeTable because
         # output often squeezes columns leaving no space between them
         c_width = [7, 5, 5, 5, 2, 2, 2]
-        l = f.readline()
-        dat = np.asarray(list(map(int, split_string(l, c_width))), dtype=np.int)
-        l = f.readline()
-        while l != "":
+        line = f.readline()
+        dat = np.asarray(list(map(int, split_string(line, c_width))), dtype=np.int)
+        line = f.readline()
+        while line != "":
             dat = np.vstack(
                 [
                     dat,
-                    np.asarray(list(map(int, split_string(l, c_width))), dtype=np.int),
+                    np.asarray(
+                        list(map(int, split_string(line, c_width))), dtype=np.int
+                    ),
                 ]
             )
-            l = f.readline()
+            line = f.readline()
 
         self.data = dat
-        for l, d in zip(self.col_lbl, self.data.transpose()):
-            self[l] = d
+        for line, d in zip(self.col_lbl, self.data.transpose()):
+            self[line] = d
 
 
 class EnTable(dict):
@@ -1214,9 +1221,9 @@ class ResultCollection(OrderedDict):
                     cd = Table()
                     for f in fields:
                         cd[f] = _dichroism_calculator(self[L][f], self[R][f])
-                    l = len(cd[f])
+                    length = len(cd[f])
                     x_field = self[L].x_field
-                    cd[x_field] = self[L][x_field][:l, ...]
+                    cd[x_field] = self[L][x_field][:length, ...]
 
                     cd.x_field = x_field
                     cd.y_fields = fields
@@ -1410,10 +1417,10 @@ class FileCollection(ResultCollection):
             fields = ["CDext"]
 
         CD = ResultCollection()
-        for l in list(self.keys()):
-            utils.logger.trace(f"Dichroism from: {l}")
-            cd = self[l].summary.dichroism()
-            CD[l[:-3]] = cd
+        for line in list(self.keys()):
+            utils.logger.trace(f"Dichroism from: {line}")
+            cd = self[line].summary.dichroism()
+            CD[line[:-3]] = cd
 
         cd.y_fields = fields
         return CD
@@ -1575,25 +1582,25 @@ class SCAHyperSpace:
 
         # identify wavelengths
         s = re.compile(r"w\d+r000k000.sca")
-        l = [x for x in flist if s.match(x)]
+        wl = [x for x in flist if s.match(x)]
         W = [0] * len(Wset)
-        for i, f in enumerate(l):
+        for i, f in enumerate(wl):
             sca = SCASummaryTable(f, zfile=self.zfile)
             W[i] = sca.wave
 
         # identify radii
         s = re.compile(r"w000r\d+k000.sca")
-        l = [x for x in flist if s.match(x)]
+        radii = [x for x in flist if s.match(x)]
         R = [0] * len(Rset)
-        for i, f in enumerate(l):
+        for i, f in enumerate(radii):
             sca = SCASummaryTable(f, zfile=self.zfile)
             R[i] = sca.aeff
 
         # identify angles
         beta, theta, phi = set(), set(), set()
         s = re.compile(r"w000r000k\d+.sca")
-        l = [x for x in flist if s.match(x)]
-        for f in l:
+        angles = [x for x in flist if s.match(x)]
+        for f in angles:
             sca = SCASummaryTable(f, zfile=self.zfile)
             beta.add(sca.beta)
             theta.add(sca.theta)

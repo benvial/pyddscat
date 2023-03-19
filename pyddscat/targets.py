@@ -1,4 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 """
 Target definitions.
 
@@ -336,7 +341,7 @@ class Target_Builtin(Target):
         return self._calc_size(N=self.N, d=self.d)
         # return (self.N*3/4/np.pi)**(1/3)*self.d
 
-    def calltarget(self, infile, verbose=False):
+    def _calltarget(self, infile, verbose=False):
         result = subprocess.run(
             ["calltarget"],
             stdin=open(infile),
@@ -357,7 +362,7 @@ class Target_Builtin(Target):
                 f.write(s + "\n")
 
         infile = os.path.join(self.folder, "calltarget.dat")
-        self.calltarget(infile)
+        self._calltarget(infile)
         os.rename(
             os.path.join(self.folder, "target.out"),
             os.path.join(self.folder, self.fname),

@@ -1,4 +1,9 @@
-# pyddscat Configuration file
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 
 # Paths should be specififed using unix forward slashes / even on
 # Windows systems

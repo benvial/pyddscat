@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Author: Benjamin Vial
-# License: MIT
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 
 import setuptools
 
@@ -31,10 +33,3 @@ setuptools.setup(
         "build_ext": FortranBuild,
     },
 )
-# if __name__ == "__main__":
-#     setuptools.setup()
-#     #     cmdclass={
-#     #         "build_ext": Build,
-#     #     },
-#     #     # scripts=["bin/ddscat", "bin/ddpostprocess", "bin/vtrconvert", "bin/calltarget"],
-#     # )

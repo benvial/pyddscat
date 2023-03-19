@@ -1,5 +1,9 @@
-# pyddscat Configuration file
-# For running luna in serial on SGE via qsub
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 
 # The profile name
 name = "luna_serial"

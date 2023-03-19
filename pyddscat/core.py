@@ -1,4 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: The Phokaia Developers
+# This file is part of pyddscat
+# License: GPLv3
+# See the documentation at phokaia.gitlab.io/doc/pyddscat
 """
 A set of tools for setting up and working with the program DDScat.
 """
@@ -152,7 +157,7 @@ class Settings(object):
         """
 
         with open(fname, "r") as f:
-            lines = [fileio._parseline(l) for l in f.readlines()]
+            lines = [fileio._parseline(line) for line in f.readlines()]
         # Process target.
         # This is discarded, only needed to determine line spacing and
         # style of scattering specifier
@@ -208,18 +213,19 @@ class Settings(object):
             if isinstance(target, targets.Periodic):
                 if target.dimension == 1:
                     settings["scat_planes"] = [
-                        ranges.Scat_Range_1dPBC.fromstring(l)
-                        for l in lines[43 : 43 + n_scat]
+                        ranges.Scat_Range_1dPBC.fromstring(line)
+                        for line in lines[43 : 43 + n_scat]
                     ]
                 elif target.dimension == 2:
                     settings["scat_planes"] = [
-                        ranges.Scat_Range_2dPBC.fromstring(l)
-                        for l in lines[43 : 43 + n_scat]
+                        ranges.Scat_Range_2dPBC.fromstring(line)
+                        for line in lines[43 : 43 + n_scat]
                     ]
 
             else:
                 settings["scat_planes"] = [
-                    ranges.Scat_Range.fromstring(l) for l in lines[43 : 43 + n_scat]
+                    ranges.Scat_Range.fromstring(line)
+                    for line in lines[43 : 43 + n_scat]
                 ]
         return settings
 
@@ -407,7 +413,7 @@ class DDscat(object):
         """Calculate the x-parameter (Userguide p8)."""
         a = self.target.aeff
 
-        out = [2 * np.pi * a / l for l in self.settings.wavelengths]
+        out = [2 * np.pi * a / wl for wl in self.settings.wavelengths]
 
         return np.asarray(out)
 
@@ -418,10 +424,10 @@ class DDscat(object):
 
         out = []
         k = 2 * np.pi * self.target.d
-        for l in self.settings.wavelengths:
-            m = m_dat(l)
+        for wl in self.settings.wavelengths:
+            m = m_dat(wl)
             m = np.abs(m["Rem"] + 1j * m["Imm"])
-            out.append(k / l * m)
+            out.append(k / wl * m)
 
         return np.asarray(out)
 
@@ -432,9 +438,9 @@ class DDscat(object):
         m_dat = results.MInTable(self.target.material[0])
 
         out = []
-        for l in self.settings.wavelengths:
-            m = m_dat(l)
-            k = 9.88 * l * (N / 10**6) ** (1 / 3)
+        for wl in self.settings.wavelengths:
+            m = m_dat(wl)
+            k = 9.88 * wl * (N / 10**6) ** (1 / 3)
             out.append(k / np.abs(m["Rem"] + 1j * m["Imm"]))
 
         return np.asarray(out)
@@ -445,8 +451,8 @@ class DDscat(object):
         N = self.target.N
         m_dat = results.MInTable(self.target.material[0])
         out = []
-        for l in self.settings.wavelengths:
-            m = m_dat(l)
+        for wl in self.settings.wavelengths:
+            m = m_dat(wl)
             out.append(62 / np.abs(m["Rem"] + 1j * m["Imm"]) * (N / 10**6) ** (1 / 3))
 
         return np.asarray(out)

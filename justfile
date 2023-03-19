@@ -1,5 +1,13 @@
 
 PROJECT_NAME := "pyddscat"
+PROJECT_DIR := `pwd`
+VERSION := ```python3 -c "from configparser import ConfigParser; p = ConfigParser();p.read('setup.cfg'); print(p['metadata']['version'])"```
+URL := ```python3 -c "from configparser import ConfigParser; p = ConfigParser();p.read('setup.cfg'); print(p['metadata']['url'])"```
+BRANCH := `git branch --show-current`
+GITLAB_PROJECT_ID := "44436558"
+GITLAB_GROUP_ID := "64380746"
+LINT_FLAGS := "E501,F401,F403,F405,W503,E402,E203"
+
 
 # List all recipes
 list:
@@ -20,21 +28,12 @@ ddscat:
 	make -s fortran
 
 
-# Run the test suite
-test:
-	pytest test \
-	--cov={{PROJECT_NAME}} --cov-append --cov-report term \
-	--durations=0
 
 # Clean generated files
 clean:
 	cd doc && just clean
 	cd ddscat && make clean
-	rm -rf bin
 
-# Format with black
-format:
-    black .
 
 # Build documentation
 doc:
@@ -55,5 +54,45 @@ gl:
 # Clean, reformat and push to gitlab
 save: clean format gl
 
-# replace:
-# 	find . -type f -exec sed -i 's/ScatPy/pyddscat/g' {} +
+
+
+# Install development dependencies
+dev:
+    pip install -r dev/requirements.txt
+
+# Format with black
+format:
+    black .
+
+# Lint with flake8
+lint:
+	@flake8 --exit-zero --ignore={{LINT_FLAGS}} {{PROJECT_NAME}} 
+	
+# Lint using flake8
+lint-extra:
+	@flake8 --exit-zero --ignore={{LINT_FLAGS}} {{PROJECT_NAME}}  test/ examples/ --exclude "dev*"
+
+# Check for duplicated code
+dup:
+	@pylint --exit-zero -f colorized --disable=all --enable=similarities {{PROJECT_NAME}}
+
+
+# Clean test coverage reports
+cleantest:
+	@rm -rf .coverage* htmlcov coverage.xml
+
+
+# Install requirements for testing
+test-req:
+	@cd test && pip install -r requirements.txt
+
+
+# Run the test suite
+test:
+	pytest test \
+	--cov={{PROJECT_NAME}} --cov-append --cov-report term \
+	--durations=0
+
+#  Update header
+header:
+	cd dev && python update_header.py
