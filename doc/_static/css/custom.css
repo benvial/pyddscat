@@ -93,7 +93,156 @@ h2 {
     text-align: center;
     padding: 40% 10px 10px 10px;
 }
+
 .sphx-glr-thumbnail-title {
     font-weight: 400;
     text-transform: uppercase;
+}
+
+
+
+
+/* landing page */
+.landing {
+    text-align: center;
+    padding-top: 7em;
+    background-color: var(--color-background-secondary);
+    min-height: 90vh;
+}
+
+.landing h1 {
+    font-size: 600%;
+    color: var(--color-brand-primary);
+}
+
+.landing h2 {
+    font-size: 200%;
+    font-family: var(--font-stack);
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+}
+
+.landing img {
+    max-height: 670px;
+    width: 220px;
+}
+
+.landing input {
+    padding: 16px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.button-landing {
+    display: inline-block;
+    background-color: #535353;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: var(--font-stack--monospace);
+    font-size: 104%;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin-top: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    outline: none;
+    height: 60px;
+    width: 220px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: var(--font-stack--monospace);
+    font-size: 1rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .button-landing:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4b4b4b;
+    z-index: -2;
+  }
+  .button-landing:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-brand-primary);
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  .button-landing:hover {
+    color: #fff;
+  }
+  .button-landing:hover:before {
+    width: 100%;
+  }
+
+dd strong {
+    font-family: var(--font-stack--monospace);
+}
+
+/* pygments */
+
+.highlight .k {
+    color: var(--color-brand-primary);
+}
+
+.highlight .mf,
+.highlight .mi {
+    color: #48b0b0;
+}
+
+.highlight .o {
+    color: #99673f;
+}
+
+.highlight .kn {
+    color: #386db9;
+}
+.highlight .nb {
+    color: #e49100;
+  }
+.highlight .s1 {
+    color: #a6184d;
+}
+
+.highlight .gp,
+.highlight .c1 {
+    color: #ac6e6e;
+}
+
+.highlight .sd {
+    color: #3d8827;
+}
+
+.highlight .bp {
+    color: #ae1c75;
+  }
+
+  code, kbd, pre, samp {
+    font-weight: 400;
   }

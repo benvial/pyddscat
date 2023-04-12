@@ -32,4 +32,10 @@ setuptools.setup(
     cmdclass={
         "build_ext": FortranBuild,
     },
+    scripts=[
+        "bin/ddscat",
+        "bin/vtrconvert",
+        "bin/ddpostprocess",
+        "bin/calltarget",
+    ],
 )

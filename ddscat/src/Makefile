@@ -111,7 +111,7 @@ MKL_m = mkl_dfti.mod
 #     sp + no MKL + no OpenMP + no MPI
 
 # define the following:
-PRECISION	= sp
+PRECISION	= dp
 CXFFTMKL.f	= cxfft3_mkl_fake.f90
 CXFFTMKL.o	= cxfft3_mkl_fake.o
 MKLM		=
@@ -120,9 +120,14 @@ OPENMP		= -fopenmp
 MPI.f		= mpi_fake.f90
 MPI.o		= mpi_fake.o
 DMPI		=
-FC		= gfortran
-FFLAGS		= -Ofast
-LFLAGS	 	=
+# FC		= gfortran
+LFLAGS	 	= 
+# MPI.f		= $(MPI_f)
+# MPI.o		= $(MPI_o)
+# DMPI	    = -Dmpi
+# FC          = mpifort
+# FFLAGS		= -Ofast
+# LFLAGS	 	= -lmpi
 
 #----------------------------------------------------------------------
 # 2.a  g95 compiler

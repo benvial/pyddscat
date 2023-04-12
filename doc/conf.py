@@ -9,6 +9,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 import pyvista
+import sys
 
 # necessary when building the sphinx gallery
 pyvista.BUILDING_GALLERY = True
@@ -30,6 +31,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.viewcode",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     "sphinx.ext.inheritance_diagram",
@@ -41,8 +43,8 @@ extensions = [
 
 
 templates_path = ["_templates"]
+html_additional_pages = {"index": "landing-page.html"}
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
-
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -56,6 +58,8 @@ html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#df4e38",
         "color-brand-content": "#df4e38",
+        "color-api-name": "#df4e38",
+        "color-api-pre-name": "#222222",
         "color-sidebar-background": "#ededed",
         "color-sidebar-search-background": "#ededed",
         "font-stack": "IBM Plex Sans Condensed, sans-serif",
@@ -64,6 +68,7 @@ html_theme_options = {
     "dark_css_variables": {
         "color-brand-primary": "#df4e38",
         "color-brand-content": "#df4e38",
+        "color-api-name": "#df4e38",
         "color-sidebar-background": "#2a2d2b",
         "color-sidebar-search-background": "#2a2d2b",
         "color-background-primary": "#3a3b3b",
@@ -73,7 +78,7 @@ html_theme_options = {
 }
 html_title = "pyddscat"
 html_show_sphinx = False
-
+html_favicon = "_static/logo.ico"
 html_css_files = [
     "css/custom.css",
 ]
@@ -107,13 +112,22 @@ sphinx_gallery_conf = {
     "thumbnail_size": (800, 800),
     "default_thumb_file": "./_static/logo.png",
     "show_memory": True,
-    # "binder": {
-    #     "org": "phokaia",
-    #     "repo": "phokaia.gitlab.io",
-    #     "branch": "master",
-    #     "binderhub_url": "https://mybinder.org",
-    #     "dependencies": "../environment.yml",
-    #     "notebooks_dir": "notebooks",
-    #     "use_jupyter_lab": True,
-    # },
+    "binder": {
+        "org": "phokaia",
+        "repo": "pyddscat",
+        "branch": "doc",
+        "binderhub_url": "https://mybinder.org",
+        "dependencies": "../environment.yml",
+        "notebooks_dir": "notebooks",
+        "use_jupyter_lab": True,
+    },
+}
+
+
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
+    "numpy": ("https://numpy.org/devdocs/", None),
+    "matplotlib": ("https://matplotlib.org/stable/", None),
+    "scipy": ("https://numpy.org/devdocs/", None),
+    # "pylat": ("https://pylat.gitlab.io/", None),
 }

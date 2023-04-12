@@ -16,6 +16,23 @@
 * Work with and visualize nearfield results as multidimensional `numpy` arrays
 * Suitable for interactive or scripted use
 
+
+
+## Installation
+
+You will need a fortran compiler, e.g.:
+
+```
+mamba install -c conda-forge fortran-compiler
+```
+
+Then install locally with `pip`:
+
+```
+cd path/to/pyddscatt
+pip install -e .
+```
+
 ## Documentation
 
 ## Download

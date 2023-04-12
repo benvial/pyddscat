@@ -1315,18 +1315,26 @@ class FRMFILPBC(FROM_FILE, Periodic):
     directive = "FRMFILPBC"
 
     def __init__(
-        self, grid=None, period=(0, 0), d=None, material=None, folder=None, fname=None
+        self,
+        grid=None,
+        period=(0, 0),
+        axes=1,
+        d=None,
+        material=None,
+        folder=None,
+        fname=None,
     ):
         FROM_FILE.__init__(self, grid=grid, d=d, material=material, folder=folder)
 
         #        self.directive = 'FRMFILPBC'
         self.fname = "shape.dat" if fname is None else fname
         self.period = period
+        self.axes = axes
 
     @property
     def sh_param(self):
         """Return the shape parameter"""
-        return (self.period[0] / self.d, self.period[1] / self.d, self.fname)
+        return (self.period[0] / self.d, self.period[1] / self.d, self.axes, self.fname)
 
     @classmethod
     def fromfile(cls, fname):
@@ -1372,12 +1380,13 @@ class RCTGL_PBC(RCTGLPRSM, Periodic):
     directive = "RCTGL_PBC"
 
     def __init__(
-        self, phys_shape, period, d=None, material=None, folder=None, fname=None
+        self, phys_shape, period, axes, d=None, material=None, folder=None, fname=None
     ):
         RCTGLPRSM.__init__(self, phys_shape, d=d, material=material, folder=folder)
 
         self.directive = "RCTGL_PBC"
         self.period = period
+        self.axes = axes
 
     @property
     def sh_param(self):
@@ -1386,6 +1395,7 @@ class RCTGL_PBC(RCTGLPRSM, Periodic):
         return (RCTGLPRSM.sh_param.fget(self)) + (
             self.period[0] / self.d,
             self.period[1] / self.d,
+            self.axes,
         )
 
     @classmethod

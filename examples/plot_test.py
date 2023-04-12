@@ -37,14 +37,14 @@ target.show()
 # Create a job to be run
 job = pd.DDscat(target=target)
 
-
 ##############################################################################
 # Change the range of calculated wavelengths and ambient index
-job.settings.wavelengths = pd.ranges.How_Range(0.300, 0.600, 15)
+job.settings.wavelengths = pd.ranges.How_Range(0.300, 0.600, 31)
 job.settings.NAMBIENT = 1.0
 
-# Run the job locally
-job.calculate(silent=True)
+##############################################################################
+# Run the job
+job.calculate()
 
 out = job.output
 

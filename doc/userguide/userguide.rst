@@ -5,24 +5,23 @@ User's Guide
 Introduction
 ============
 This user's guide is intended to help new users become proficient at using
-pyddscat to manage their work with DDSCAT. It assumes you have a working copy of
-DDSCAT and some understanding of how it works. 
+``pyddscat`` to manage their work with DDSCAT. It assumes you have some understanding of how it works. 
+``pyddscat`` should install the latest version of 
+DDSCAT, but users could use their own custom version by setting appropriate ``$PATH`` envirnoment variable.
 
 DDSCAT
 ======
 DDSCAT is an implementation of the discrete dipole approximation by Bruce T. Draine
-and Piotr J. Flatau. The DDSCAT homepage is at:
-* <http://www.astro.princeton.edu/~draine/DDSCAT.html>_
+and Piotr J. Flatau. The DDSCAT homepage is at `ddscat.wikidot.com <http://ddscat.wikidot.com>`_
 
-The latest version of the source code is available at:
-* https://code.google.com/p/ddscat/
+The latest version of the source code is available 
+`here <http://ddscat.wikidot.com/local--files/downloads/ddscat7.3.3_220120.tgz>`_.
 
 The authors have kindly provided a precompiled binary for Windows users. For 
 other operating systems you will have to compile from source.
 
-The indispensable DDSCAT user guide can be downloaded from:
-* https://ddscat.googlecode.com/files/ddscat7.3.0_UserGuide_130529.pdf
-
+The indispensable DDSCAT user guide can be downloaded 
+`here  <http://ddscat.wikidot.com/local--files/downloads/UserGuide7.3.3_200717.pdf>`_.
 
 Overview
 ========

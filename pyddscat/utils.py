@@ -22,7 +22,6 @@ from pkg_resources import (
     resource_listdir,
     cleanup_resources,
 )
-import loguru
 from loguru import logger
 
 from numpy.linalg import norm
