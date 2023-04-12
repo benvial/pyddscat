@@ -8,7 +8,7 @@
 
 """
 A simple example
-=====================
+================
 
 Homogeneous, isotropic finite cylinder with hemispherical endcaps.
 """
