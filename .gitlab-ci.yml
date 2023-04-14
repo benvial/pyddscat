@@ -19,6 +19,9 @@ before_script:
   - which Xvfb
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - sleep 3
+  - conda config --set always_yes true
+  - mamba create -n pyddscat -c conda-forge
+  - mamba activate pyddscat 
   - mamba install just make pyvista fortran-compiler
   - echo $FC
   - just install
