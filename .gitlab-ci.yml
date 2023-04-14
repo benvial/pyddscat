@@ -45,7 +45,7 @@ pages:
   script:
     - just doc-req
     - just doc
-    - cp -r doc/_build/ public/
+    - cp -r doc/_build/html/ public/
   artifacts:
     paths:
       - public
