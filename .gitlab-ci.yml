@@ -1,0 +1,44 @@
+
+image: condaforge/mambaforge:latest
+
+stages:
+  - test
+  - doc
+
+variables:
+  TERM: "xterm"
+  DISPLAY: ":99.0"
+  PYVISTA_OFF_SCREEN: "true"
+
+
+
+before_script:
+  ## install os tools
+  - apt-get update -q && apt-get install -q -y --no-install-recommends wget unzip fontconfig libfontconfig libgl1-mesa-dev xvfb
+  - python -V  # Print out python version for debugging
+  - which Xvfb
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - sleep 3
+  - mamba install just make pyvista fortran-compiler
+  - just install
+
+test:
+  stage: test
+  script:
+    - just test-req
+    - just test
+    - cp -r doc/_build/ public/
+  only:
+    - main
+
+pages:
+  stage: doc
+  script:
+    - just doc-req
+    - just doc
+    - cp -r doc/_build/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
