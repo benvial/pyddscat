@@ -21,7 +21,7 @@ before_script:
   - sleep 3
   - conda config --set always_yes true
   - mamba create -n pyddscat -c conda-forge
-  - mamba activate pyddscat 
+  - conda activate pyddscat 
   - mamba install just make pyvista fortran-compiler
   - echo $FC
   - just install
