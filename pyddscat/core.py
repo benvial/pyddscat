@@ -504,6 +504,39 @@ class DDscat(object):
             os.path.join(config["ddscat_path"], "calltarget"), cwd=self.folder
         )
 
+    def postprocess_fields(
+        self,
+        infile="w000r000k000.E1",
+        prefix="VTRoutput",
+        vtr=False,
+        lines=[],
+        verbose=False,
+    ):
+        """Execute ddpostprocess"""
+
+        fname = os.path.join(self.folder, "ddpostprocess.par")
+        fileio.write_ddpostprocess_par(fname, infile, prefix, vtr, lines)
+        result = subprocess.run(
+            ["ddpostprocess"],
+            cwd=self.folder,
+            capture_output=True,
+            text=True,
+        )
+        if verbose:
+            print(result.stdout)
+            print(result.stderr)
+        datafile = os.path.join(self.folder, "ddpostprocess.out")
+        data = np.loadtxt(datafile, skiprows=1)
+        self.fields = dict(
+            x=data[:, 0],
+            y=data[:, 1],
+            z=data[:, 2],
+            Ex=data[:, 3] + 1j * data[:, 4],
+            Ey=data[:, 5] + 1j * data[:, 6],
+            Ez=data[:, 7] + 1j * data[:, 8],
+        )
+        return self.fields
+
     @property
     def output_collection(self):
         return results.FolderCollection(path=self.folder)
@@ -511,6 +544,11 @@ class DDscat(object):
     @property
     def output(self):
         return self.output_collection[self.folder]
+
+    # @property
+    # def fields(self):
+    #     fname = os.path.join(self.folder, "w000r000k000.E1")
+    #     return results.EnTable(fname)
 
 
 def set_config(fname=None):

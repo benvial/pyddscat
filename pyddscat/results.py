@@ -1078,6 +1078,7 @@ class EnTable(dict):
         self.hdr = OrderedDict()
         for k in hdr_fields:
             v = np.fromfile(fid, dtype=hdr_fields[k], count=1)
+            # print( k, v)
             setattr(self, k, v)
 
         E_inc = self.E_inc

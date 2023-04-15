@@ -7,10 +7,6 @@ Documentation
     Version |release| |  built on |today|
 
 
-.. raw:: html
-
-    <a class="reference external image-reference" href="https://gitlab.com/phokaia/pyddscat/commits/main" target="_blank"><img alt="Release" src="https://gitlab.com/phokaia/pyddscat/badges/main/coverage.svg?style=flat-square"></a> 
-
 
 
 Introduction

@@ -7,10 +7,10 @@
 
 
 """
-Scattering by a cylinder
-========================
+Scattering by a sphere
+======================
 
-Homogeneous, isotropic finite cylinder with hemispherical endcaps.
+Reproduces the top panel of Fig. 6 in DDSCAT manual.
 """
 
 
@@ -22,11 +22,10 @@ import matplotlib.pyplot as plt
 ##############################################################################
 # Parameters
 
-length = 0.100
-radius = 0.020
-
-material = "Au_evap"
-target = pd.targets.CYLNDRCAP(length, radius, d=0.004, material=material)
+a = 1
+d = a / 10
+material = 1.7 + 0.1j
+target = pd.targets.Sphere(a, d=d, material=material)
 
 ##############################################################################
 # Plot target
@@ -38,25 +37,30 @@ job = pd.DDscat(target=target)
 
 ##############################################################################
 # Change the range of calculated wavelengths and ambient index
-job.settings.wavelengths = pd.ranges.How_Range(0.300, 0.600, 31)
-job.settings.NAMBIENT = 1.0
+job.settings.wavelengths = pd.ranges.How_Range(
+    2 * np.pi * a / 8, 2 * np.pi * a / 0.01, 100, "INV"
+)
+job.settings.scat_planes = [pd.ranges.Scat_Range(0, 0, 0, 1)]
 
 ##############################################################################
 # Run the job
 job.calculate()
 
-out = job.output
-
-##############################################################################
-# Check optical theorem
-optical_theorem = out["Q_abs"] + out["Q_sca"] - out["Q_ext"]
-print(optical_theorem)
-assert np.allclose(optical_theorem, 0, atol=1e-4)
-
-
 ##############################################################################
 # Plot
-ax = out.plot(["Q_sca", "Q_abs", "Q_ext"])
+out = job.output
+wls = job.settings.wavelengths.table
+x = 2 * np.pi * a / wls
+
+fig, ax = plt.subplots(figsize=(10, 4))
+plt.plot(x, out["Q_sca"], label="Q_sca")
+plt.plot(x, out["Q_abs"], label="Q_abs")
+plt.plot(x, out["Q_ext"], label="Q_ext")
 ax.legend(loc=0)
-ax.set_xlabel("wavelength (microns)")
-ax.set_ylabel("Scattering cross sections")
+ax.set_xlabel("$x = 2\pi a/\lambda$")
+plt.yscale("log")
+plt.xlim(0, 8)
+plt.ylim(1e-2)
+plt.tight_layout()
+
+plt.show()

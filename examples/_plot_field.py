@@ -21,12 +21,11 @@ import matplotlib.pyplot as plt
 
 ##############################################################################
 # Parameters
-
-length = 0.100
-radius = 0.020
-
-material = "Au_evap"
-target = pd.targets.CYLNDRCAP(length, radius, d=0.004, material=material)
+wl = 0.5
+a = 5 * wl / (2 * np.pi)
+d = a / 2.81
+material = 0.96 + 1.01j
+target = pd.targets.Sphere(a, d=d, material=material)
 
 ##############################################################################
 # Plot target
@@ -38,25 +37,31 @@ job = pd.DDscat(target=target)
 
 ##############################################################################
 # Change the range of calculated wavelengths and ambient index
-job.settings.wavelengths = pd.ranges.How_Range(0.300, 0.600, 31)
-job.settings.NAMBIENT = 1.0
+job.settings.wavelengths = pd.ranges.How_Range(wl, wl, 1)
+job.settings.NRFLD = True  # Make nearfield calc
+job.settings.scat_planes = [pd.ranges.Scat_Range(0, 0, 180, 1)]
+# job.settings.NRFLD_EXT = np.array(
+#     (0.5,) * 6
+# )  # Set nearfield box to 0.5x on all sides
 
 ##############################################################################
 # Run the job
 job.calculate()
 
-out = job.output
-
 ##############################################################################
-# Check optical theorem
-optical_theorem = out["Q_abs"] + out["Q_sca"] - out["Q_ext"]
-print(optical_theorem)
-assert np.allclose(optical_theorem, 0, atol=1e-4)
+# Compute fields
+lines = [pd.fileio.Line((-1.5 * a, 0, 0), (1.5 * a, 0, 0), 501)]
+job.postprocess_fields(lines=lines)
 
 
-##############################################################################
-# Plot
-ax = out.plot(["Q_sca", "Q_abs", "Q_ext"])
-ax.legend(loc=0)
-ax.set_xlabel("wavelength (microns)")
-ax.set_ylabel("Scattering cross sections")
+x = job.fields["x"]
+
+normE2 = (
+    np.abs(job.fields["Ex"]) ** 2
+    + np.abs(job.fields["Ey"]) ** 2
+    + np.abs(job.fields["Ez"]) ** 2
+)
+
+plt.plot(x / a, normE2)
+plt.show()
+# job.fields

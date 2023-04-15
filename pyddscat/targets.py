@@ -13,6 +13,7 @@ import tempfile
 import subprocess
 import numpy as np
 import os
+import shutil
 import os.path
 import copy
 from . import results
@@ -86,10 +87,24 @@ class Target(object):
         self.directive = directive
         self.fname = "shape.dat"
 
+        self._folder = tempfile.mkdtemp() if folder is None else folder
+        if isinstance(material, str):
+            material = [material]
         if isinstance(material, (list, tuple)):
-            self.material = list(material)
-        elif isinstance(material, str):
-            self.material = [material]
+            self.material = []
+            for m in material:
+                # pref = os.path.dirname(m)
+                suf = os.path.basename(m)
+                new = os.path.join(self._folder, suf)
+                try:
+                    shutil.copyfile(m, new)
+                except Exception:
+                    pass
+                self.material.append(new)
+        elif np.isscalar(material):
+            fname = os.path.join(self._folder, "cst_mat")
+            fileio.build_constant_material(material, fname)
+            self.material = [fname]
         else:
             raise TypeError("Material must be a string or list of strings")
 
@@ -98,8 +113,6 @@ class Target(object):
 
         if aeff is not None:
             self.aeff = aeff
-
-        self._folder = tempfile.mkdtemp() if folder is None else folder
 
     def save_str(self):
         """Return the multi-line target definition string for the ddscat.par file"""
