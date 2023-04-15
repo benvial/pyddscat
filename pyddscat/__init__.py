@@ -3,7 +3,7 @@
 # Author: The Phokaia Developers
 # This file is part of pyddscat
 # License: GPLv3
-# See the documentation at phokaia.gitlab.io/doc/pyddscat
+# See the documentation at phokaia.gitlab.io/pyddscat
 """
 pyddscat is a set of tools for setting up DDSCAT jobs and analaysing the results.
 

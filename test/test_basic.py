@@ -3,7 +3,7 @@
 # Author: The Phokaia Developers
 # This file is part of pyddscat
 # License: GPLv3
-# See the documentation at phokaia.gitlab.io/doc/pyddscat
+# See the documentation at phokaia.gitlab.io/pyddscat
 
 import pyddscat as pd
 import matplotlib.pyplot as plt
