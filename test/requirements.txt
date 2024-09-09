@@ -4,3 +4,4 @@ pytest-datadir
 pytest-sugar
 pytest-xdist[psutil]
 coverage
+toml

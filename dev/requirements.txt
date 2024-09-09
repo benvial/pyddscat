@@ -1,5 +1,6 @@
 pip 
-setuptools 
+setuptools
+toml
 wheel
 build
 flake8
