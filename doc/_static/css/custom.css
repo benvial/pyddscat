@@ -107,11 +107,11 @@ h2 {
     text-align: center;
     padding-top: 7em;
     background-color: var(--color-background-secondary);
-    min-height: 90vh;
+    height: 100vh;
 }
 
 .landing h1 {
-    font-size: 600%;
+    font-size: 500%;
     color: var(--color-brand-primary);
 }
 
@@ -135,11 +135,12 @@ h2 {
 }
 
 .center {
-    display: flex;
     justify-content: center;
 }
 
-
+.landing-buttons{
+    margin-top: 62px;
+}
 
 
 .button-landing {
@@ -155,7 +156,7 @@ h2 {
     height: 40px;
     line-height: 20px;
     list-style: none;
-    margin-top: 80px;
+    margin-top: 24px;
     margin-right: 10px;
     margin-left: 10px;
     outline: none;

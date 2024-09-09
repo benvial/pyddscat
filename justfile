@@ -1,8 +1,8 @@
 
 PROJECT_NAME := "pyddscat"
 PROJECT_DIR := `pwd`
-VERSION := ```python3 -c "from configparser import ConfigParser; p = ConfigParser();p.read('setup.cfg'); print(p['metadata']['version'])"```
-URL := ```python3 -c "from configparser import ConfigParser; p = ConfigParser();p.read('setup.cfg'); print(p['metadata']['url'])"```
+VERSION := ```python3 -c "import toml;print(toml.load('pyproject.toml')['project']['version'])"```
+URL := ```python3 -c "import toml;print(toml.load('pyproject.toml')['project']['urls']['Repository'])"```
 BRANCH := `git branch --show-current`
 GITLAB_PROJECT_ID := "44436558"
 GITLAB_GROUP_ID := "64380746"
@@ -25,7 +25,7 @@ doc-req:
 
 # Build ddscat
 ddscat:
-	make -s fortran
+	make -s ddscat
 
 
 
@@ -90,9 +90,13 @@ test-req:
 # Run the test suite
 test:
 	pytest test \
-	--cov={{PROJECT_NAME}} --cov-append --cov-report term \
+	--cov={{PROJECT_NAME}}/ --cov-report term --cov-report html --cov-report xml  \
 	--durations=0
 
 #  Update header
 header:
 	cd dev && python update_header.py
+
+# Show html documentation in the default browser
+show:
+    cd doc && make -s show

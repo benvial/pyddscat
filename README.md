@@ -23,7 +23,7 @@
 * Maintain profiles and defaults for deployment on platforms other than the local machine
 * Load, plot and manipulate `DDSCAT` output tables
 * Manage the output from multiple jobs through results collections
-* Work with and visualize nearfield results as multidimensional `numpy` arrays
+* Work with and visualize near field results as multidimensional `numpy` arrays
 * Suitable for interactive or scripted use
 
 

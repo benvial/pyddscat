@@ -28,7 +28,7 @@ import pyvista
 from . import utils
 from . import fileio
 from . import ranges
-
+from . import executables
 
 pyvista.set_jupyter_backend("trame")
 pyvista.set_plot_theme("document")
@@ -41,6 +41,10 @@ pyvista.global_theme.axes.show = True
 
 #: Default spacing between dipoles (in um)
 default_d = 0.015
+
+
+def int_tuple(x):
+    return tuple(np.int32(x).tolist())
 
 
 class Target(object):
@@ -141,7 +145,7 @@ class Target(object):
             # This assumes that vtrconvert is in your path
             # check os.environ['PATH'] to be sure
             result = subprocess.run(
-                ["vtrconvert", self.fname, outfile],
+                [executables["vtrconvert"], self.fname, outfile],
                 cwd=self.folder,
                 capture_output=True,
                 text=True,
@@ -149,7 +153,6 @@ class Target(object):
             if verbose:
                 print(result.stdout)
                 print(result.stderr)
-            # print(result.stderr)
         else:
             print("No target.out file to convert")
 
@@ -356,7 +359,7 @@ class Target_Builtin(Target):
 
     def _calltarget(self, infile, verbose=False):
         result = subprocess.run(
-            ["calltarget"],
+            [executables["calltarget"]],
             stdin=open(infile),
             cwd=self.folder,
             capture_output=True,
@@ -368,7 +371,11 @@ class Target_Builtin(Target):
 
     def write(self):
         """Write the shape file."""
-        out = str(tuple(self.sh_param)).translate(str.maketrans("", "", "(),")).split()
+        out = (
+            str(tuple(np.array(self.sh_param).tolist()))
+            .translate(str.maketrans("", "", "(),"))
+            .split()
+        )
         with open(os.path.join(self.folder, "calltarget.dat"), "wt") as f:
             f.write(self.directive + "\n")
             for s in out:
@@ -401,8 +408,7 @@ class RCTGLPRSM(Target_Builtin):
     @property
     def sh_param(self):
         """The shape parameters based on the physical shape"""
-
-        return tuple(np.around(self.phys_shape / self.d).astype(int))
+        return int_tuple(np.around(self.phys_shape / self.d))
 
     @staticmethod
     def _calc_N(sh_param):
@@ -518,8 +524,7 @@ class ELLIPSOID(Target_Builtin):
     @property
     def sh_param(self):
         """Calculate the shape parameters"""
-
-        return tuple(2 * np.around(self.semiaxes / self.d).astype(int))
+        return int_tuple(2 * np.around(self.semiaxes / self.d))
 
     @staticmethod
     def _calc_N(sh_param):
@@ -798,8 +803,8 @@ class FROM_FILE(Target):
 
         target.phys_shape = pt2 - pt1
 
-        d_shape = np.ceil((pt2 - pt1) / target.d).astype(int)
-        d_pt1 = np.around(pt1 / target.d).astype(int)
+        d_shape = np.int32(np.ceil((pt2 - pt1) / target.d))
+        d_pt1 = np.int32(np.around(pt1 / target.d))
 
         def index_space(func, d, offset, **kwargs):
             """
@@ -944,7 +949,7 @@ class Ellipsoid_FF(Iso_FROM_FILE):
         xx, yy, zz = np.mgrid[-a:a, -b:b, -c:c]
         dist = (xx / a) ** 2 + (yy / b) ** 2 + (zz / c) ** 2
 
-        self.grid = (dist < 1).astype(int)
+        self.grid = np.int32((dist < 1))
 
 
 class Helix(Iso_FROM_FILE):
@@ -1266,7 +1271,7 @@ class Polygon(Iso_FROM_FILE):
         else:
             raise ValueError("Argument bbox must have length 2 or 4")
 
-        px_size = np.ceil((bbox_size / self.d)).astype(int)
+        px_size = np.int32(np.ceil((bbox_size / self.d)))
         scale = min(px_size / bbox_size)
 
         # map the vertices into dipole space
@@ -1278,7 +1283,7 @@ class Polygon(Iso_FROM_FILE):
         xy = np.vstack((x, y)).T
 
         grid = path.contains_points(xy)
-        grid = grid.reshape(px_size).astype(int)
+        grid = np.int32(grid.reshape(px_size))
 
         self.grid = np.tile(grid, (round(thickness / self.d), 1, 1))
 

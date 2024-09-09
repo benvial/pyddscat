@@ -96,7 +96,7 @@ sphinx_gallery_conf = {
     "backreferences_dir": "generated/backreferences",
     "remove_config_comments": True,
     "filename_pattern": "/plot_",
-    "ignore_pattern": r"^((?!/plot_).)*$",  # ignore files that do not start with plot_
+    # "ignore_pattern": r"^((?!/plot_).)*$",  # ignore files that do not start with plot_
     # "ignore_pattern": r"__init__\.py",
     "reference_url": {
         "sphinx_gallery": None,
@@ -128,6 +128,5 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
     "numpy": ("https://numpy.org/devdocs/", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
-    "scipy": ("https://numpy.org/devdocs/", None),
-    # "pylat": ("https://pylat.gitlab.io/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy", None),
 }

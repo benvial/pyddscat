@@ -1,0 +1,14 @@
+name: pyddscatt
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - fortran-compiler
+  - matplotlib
+  - numpy
+  - scipy
+  - pyvista
+  - trame
+  - ipywidgets
+  - loguru

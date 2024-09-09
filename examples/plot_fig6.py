@@ -29,7 +29,7 @@ target = pd.targets.Sphere(a, d=d, material=material)
 
 ##############################################################################
 # Plot target
-target.show()
+# target.show()
 
 ##############################################################################
 # Create a job to be run
@@ -57,7 +57,7 @@ plt.plot(x, out["Q_sca"], label="Q_sca")
 plt.plot(x, out["Q_abs"], label="Q_abs")
 plt.plot(x, out["Q_ext"], label="Q_ext")
 ax.legend(loc=0)
-ax.set_xlabel("$x = 2\pi a/\lambda$")
+ax.set_xlabel(r"$x = 2\pi a/\lambda$")
 plt.yscale("log")
 plt.xlim(0, 8)
 plt.ylim(1e-2)

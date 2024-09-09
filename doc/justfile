@@ -1,6 +1,6 @@
 
 build:
-    make html
+    make html && make postpro
 
 autobuild:
     sphinx-autobuild . _build/html --port 8001 --re-ignore='examples/*'

@@ -16,12 +16,7 @@ import glob
 import numpy as np
 import shutil
 import zipfile
-from pkg_resources import (
-    resource_exists,
-    resource_filename,
-    resource_listdir,
-    cleanup_resources,
-)
+import importlib
 from loguru import logger
 
 from numpy.linalg import norm
@@ -220,12 +215,10 @@ def resolve_profile(fname):
             break
         else:
             full_name = None
-
-    if full_name is None and resource_exists(
-        "pyddscat", os.path.join("profiles", fname)
-    ):
-        return resource_filename("pyddscat", os.path.join("profiles", fname))
-
+    resources = importlib.resources.files("pyddscat")
+    if full_name is None and os.path.join("profiles", fname) in ressources:
+        # return resource_filename("pyddscat", os.path.join("profiles", fname))
+        return importlib.resources.path("pyddscat", os.path.join("profiles", fname))
     return full_name
 
 
@@ -240,13 +233,10 @@ def make_profile():
     except OSError as e:
         raise IOError from e
 
-    files = resource_listdir("pyddscat", "profiles")
+    files = importlib.resources.files("pyddscat.profiles")
 
-    for f in files:
-        src = resource_filename("pyddscat", os.path.join("profiles", f))
-        shutil.copy(src, home_path)
-
-    cleanup_resources()
+    for f in files.files.iterdir():
+        shutil.copy(f, home_path)
 
 
 def compress_files(folder=None, recurse=False):

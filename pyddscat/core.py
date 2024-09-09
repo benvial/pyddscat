@@ -24,6 +24,7 @@ from . import results
 from . import fileio
 from . import ranges
 from . import utils
+from . import executables
 
 #: The configuration settings
 config = {}
@@ -467,7 +468,7 @@ class DDscat(object):
 
         self.write()
 
-        command = os.path.join(config["ddscat_path"], "ddscat")
+        command = executables["ddscat"]
 
         # try:
         #     __IPYTHON__
@@ -500,9 +501,7 @@ class DDscat(object):
 
         self.write()
 
-        subprocess.call(
-            os.path.join(config["ddscat_path"], "calltarget"), cwd=self.folder
-        )
+        subprocess.call(executables["calltarget"], cwd=self.folder)
 
     def postprocess_fields(
         self,
@@ -517,7 +516,7 @@ class DDscat(object):
         fname = os.path.join(self.folder, "ddpostprocess.par")
         fileio.write_ddpostprocess_par(fname, infile, prefix, vtr, lines)
         result = subprocess.run(
-            ["ddpostprocess"],
+            [executables["ddpostprocess"]],
             cwd=self.folder,
             capture_output=True,
             text=True,

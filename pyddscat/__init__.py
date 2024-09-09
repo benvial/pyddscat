@@ -16,6 +16,16 @@ It includes a number of submodules:
   -utils: a handful of common utilities
 
 """
+
+import importlib.resources
+
+executables = dict()
+executables["ddscat"] = importlib.resources.files("pyddscat") / "ddscat"
+executables["vtrconvert"] = importlib.resources.files("pyddscat") / "vtrconvert"
+executables["ddpostprocess"] = importlib.resources.files("pyddscat") / "ddpostprocess"
+executables["calltarget"] = importlib.resources.files("pyddscat") / "calltarget"
+
+
 from . import core
 from . import utils
 
