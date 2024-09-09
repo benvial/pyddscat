@@ -15,8 +15,12 @@ list:
 
 
 # Install locally
-install:
+install-loc:
 	pip install -e .
+
+# Install locally
+install:
+	pip install .
 
 
 # Install doc requirements

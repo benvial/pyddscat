@@ -216,7 +216,8 @@ def resolve_profile(fname):
         else:
             full_name = None
     resources = importlib.resources.files("pyddscat")
-    if full_name is None and os.path.join("profiles", fname) in ressources:
+    # print(resources)
+    if full_name is None and os.path.join("profiles", fname) in resources:
         # return resource_filename("pyddscat", os.path.join("profiles", fname))
         return importlib.resources.path("pyddscat", os.path.join("profiles", fname))
     return full_name
@@ -235,7 +236,7 @@ def make_profile():
 
     files = importlib.resources.files("pyddscat.profiles")
 
-    for f in files.files.iterdir():
+    for f in files.iterdir():
         shutil.copy(f, home_path)
 
 
