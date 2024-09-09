@@ -20,7 +20,7 @@ before_script:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - sleep 3
   - conda config --set always_yes true
-  - mamba install just make pyvista fortran-compiler
+  - mamba install just make pyvista fortran-compiler toml
   - export FC=gfortran
   - just install
 
