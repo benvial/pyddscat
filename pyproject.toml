@@ -46,8 +46,8 @@ Documentation = "https://phokaia.gitlab.io/pyddscat"
 Repository = "https://gitlab.io/phokaia/pyddscat"
 Issues = "https://gitlab.io/phokaia/pyddscat/issues"
 
-[tool.setuptools]
-packages = ["pyddscat"]
+[tool.setuptools.packages.find]
+where = ["."]
 
 # Install system library
 [tool.cibuildwheel.linux]
