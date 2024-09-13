@@ -49,6 +49,10 @@ Issues = "https://gitlab.io/phokaia/pyddscat/issues"
 [tool.setuptools.packages.find]
 where = ["."]
 
+
+[tool.setuptools.package-data]
+"*" = ["*.par"]
+
 # Install system library
 [tool.cibuildwheel.linux]
 before-all = ["yum install -y gcc-gfortran", "export FC=gfortran"]
