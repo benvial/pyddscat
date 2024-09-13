@@ -17,3 +17,16 @@ bin/
 
 ddscat/src/*.o
 ddscat/src/*.mod
+
+pyddscat/vtrconvert
+pyddscat/ddpostprocess
+pyddscat/calltarget
+pyddscat/ddscat
+
+
+ddscat/src/vtrconvert
+ddscat/src/ddpostprocess
+ddscat/src/calltarget
+ddscat/src/ddscat
+
+coverage.xml
