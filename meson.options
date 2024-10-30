@@ -1,0 +1,3 @@
+option('openmp', type : 'boolean', value : true)
+option('mpi', type : 'boolean', value : true)
+option('precision', type : 'string', value : 'dp')

@@ -215,8 +215,8 @@ def resolve_profile(fname):
         else:
             full_name = None
     resources = importlib.resources.files("pyddscat")
-    print("resources", resources)
-    print("full_name", full_name)
+    # print("resources", resources)
+    # print("full_name", full_name)
     if full_name is None:  # and os.path.join("profiles", fname) in resources:
         # return resource_filename("pyddscat", os.path.join("profiles", fname))
         return importlib.resources.files("pyddscat").joinpath(

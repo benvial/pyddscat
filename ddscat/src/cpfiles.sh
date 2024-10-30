@@ -1,0 +1,10 @@
+#!/bin/sh
+
+MESON_SOURCE_ROOT=$1
+MESON_BUILD_ROOT=$2
+cd $MESON_SOURCE_ROOT
+for i in *.f90; do
+  cp $i ${MESON_BUILD_ROOT}/${MESON_SUBDIR}
+done
+
+cp Makefile ${MESON_BUILD_ROOT}/${MESON_SUBDIR}

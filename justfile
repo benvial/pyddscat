@@ -4,8 +4,6 @@ PROJECT_DIR := `pwd`
 VERSION := ```python3 -c "import toml;print(toml.load('pyproject.toml')['project']['version'])"```
 URL := ```python3 -c "import toml;print(toml.load('pyproject.toml')['project']['urls']['Repository'])"```
 BRANCH := `git branch --show-current`
-GITLAB_PROJECT_ID := "44436558"
-GITLAB_GROUP_ID := "64380746"
 LINT_FLAGS := "E501,F401,F403,F405,W503,E402,E203"
 
 
@@ -60,8 +58,6 @@ gl:
 # Clean, reformat and push to gitlab
 save: clean format gl
 
-
-
 # Install development dependencies
 dev:
     pip install -r dev/requirements.txt
@@ -106,3 +102,12 @@ header:
 # Show html documentation in the default browser
 show:
     cd doc && make -s show
+
+
+set:
+    meson setup --wipe builddir
+
+bld:
+    meson compile -C builddir
+
+meson: set bld
