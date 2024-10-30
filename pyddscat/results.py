@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Author: The Phokaia Developers
+# Author: The oslumen Developers
 # This file is part of pyddscat
 # License: GPLv3
-# See the documentation at phokaia.gitlab.io/pyddscat
+# See the documentation at doc.oslu.men/pyddscat
 """
 For reading, manipulating and plotting the output files from DDSCAT
 

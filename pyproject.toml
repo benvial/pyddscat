@@ -7,7 +7,7 @@ name = "pyddscat"
 version = "0.0.1"
 description = "Discrete Dipole Scattering"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { file = "LICENSE.txt" }
 keywords = ["scattering", "electromagnetism", "optics"]
 authors = [
@@ -22,7 +22,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -53,6 +52,19 @@ where = ["."]
 [tool.setuptools.package-data]
 "*" = ["*.par"]
 
+
+
+[tool.cibuildwheel]
+# Run the package tests using `pytest`
+test-requires = "pytest"
+test-command = "pytest {package}/test/test_simulation.py"
+
 # Install system library
 [tool.cibuildwheel.linux]
 before-all = ["yum install -y gcc-gfortran", "export FC=gfortran"]
+
+
+[[tool.cibuildwheel.overrides]]
+select = "*-musllinux*"
+before-all = ["apk add gfortran", "export FC=gfortran"]
+

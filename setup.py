@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Author: The Phokaia Developers
+# Author: The oslumen Developers
 # This file is part of pyddscat
 # License: GPLv3
-# See the documentation at phokaia.gitlab.io/pyddscat
+# See the documentation at doc.oslu.men/pyddscat
 
 
 import shutil
@@ -14,6 +13,7 @@ from pathlib import Path
 from setuptools import Command, setup
 from setuptools.command.build import build
 from setuptools import logging
+from setuptools.dist import Distribution
 
 
 class CustomCommand(Command):
@@ -25,6 +25,7 @@ class CustomCommand(Command):
         self.pkg_name = self.distribution.get_name().replace("-", "_")
         with suppress(Exception):
             self.bdist_dir = Path(self.get_finalized_command("bdist_wheel").bdist_dir)
+        # self.root_is_pure = False
 
     def run(self) -> None:
         logging.logging.info("building fortran binaries")
@@ -48,4 +49,17 @@ class CustomBuild(build):
     sub_commands = [("build_custom", None)] + build.sub_commands
 
 
-setup(cmdclass={"build": CustomBuild, "build_custom": CustomCommand})
+class BinaryDistribution(Distribution):
+    """Distribution which always forces a binary package with platform name"""
+
+    def has_ext_modules(foo):
+        return True
+
+
+setup(
+    cmdclass={
+        "build": CustomBuild,
+        "build_custom": CustomCommand,
+    },
+    distclass=BinaryDistribution,
+)

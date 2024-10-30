@@ -4,3 +4,4 @@ prune doc/_build
 include Makefile
 include pyddscat/profiles/ default.par
 recursive-include ddscat *
+recursive-include test *

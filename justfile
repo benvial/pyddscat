@@ -37,6 +37,8 @@ ddscat:
 clean:
 	cd doc && just clean
 	cd ddscat && make clean
+	rm -rf *.whl
+	rm -rf wheelhouse build
 
 
 # Build documentation
