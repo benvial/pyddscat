@@ -44,15 +44,15 @@ doc:
 autodoc:
 	cd doc && just autobuild
 
-# Push to gitlab
+# Push to github
 gl:
-	@echo "Pushing to gitlab..."
+	@echo "Pushing to github..."
 	git add -A
 	@read -p "Enter commit message: " MSG; \
 	git commit -a -m "$MSG"
 	git push origin main
 
-# Clean, reformat and push to gitlab
+# Clean, reformat and push to github
 save: clean format gl
 
 # Format with black
