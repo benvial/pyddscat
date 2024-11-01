@@ -13,7 +13,7 @@ python_sources = [
 py.install_sources(
   python_sources,
   pure: false,
-  subdir: 'pyddscat'
+  subdir: 'pyddscat',
 )
 
 subdir('profiles')

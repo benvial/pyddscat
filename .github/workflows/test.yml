@@ -1,0 +1,62 @@
+name: Test
+run-name: ${{ github.repository }} testing
+on: [push]
+jobs:
+  install-and-test:
+    name: system (${{ matrix.python-version }}, ${{ matrix.os }})
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        os: [ubuntu-24.04] #, windows-latest
+    runs-on: ${{ matrix.os }}
+    env:
+      OPENBLAS_NUM_THREADS: 1
+      OMP_NUM_THREADS: 1
+      ENV DISPLAY: :99.0
+      ENV PYVISTA_OFF_SCREEN: true
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install system packages
+        if: matrix.os == 'ubuntu-24.04'
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+          gcc g++ gfortran pkg-config cmake make libgl1 libxcursor1 libxft2 libxinerama1  \
+          libglu1-mesa xvfb
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package and run tests
+        run: |
+          pip install .[test] -v
+          pytest
+
+  install-and-test-conda:
+    name: conda (${{ matrix.python-version }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-24.04"]
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+    env:
+      OPENBLAS_NUM_THREADS: 1
+      OMP_NUM_THREADS: 1
+      ENV DISPLAY: :99.0
+      ENV PYVISTA_OFF_SCREEN: true
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install conda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+      - name: Install package and run tests
+        shell: bash -el {0}
+        run: |
+          mamba create -n pyddscat python=${{ matrix.python-version }} -c conda-forge
+          mamba env update -n pyddscat -f environment.yml
+          conda activate pyddscat
+          pip install .[test] -v 
+          pytest

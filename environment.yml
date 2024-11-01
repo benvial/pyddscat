@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python
   - pip
-  - fortran-compiler
+  - compilers
   - matplotlib
   - numpy
   - scipy

@@ -11,7 +11,3 @@ py = py_mod.find_installation(pure: false)
 
 subdir('ddscat')
 subdir('pyddscat')
-
-
-
-

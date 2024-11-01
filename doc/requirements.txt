@@ -1,8 +1,0 @@
-sphinx
-furo
-sphinx-autobuild
-sphinx-copybutton
-sphinx_gallery
-memory_profiler
-myst_parser
-toml

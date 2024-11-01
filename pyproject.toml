@@ -39,6 +39,29 @@ dependencies = [
     "loguru",
 ]
 
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-datadir",
+  "pytest-sugar",
+  "pytest-xdist[psutil]",
+  "coverage",
+]
+doc = [
+  "MarkupSafe",
+  "Sphinx",
+  "furo",
+  "sphinx-autobuild",
+  "sphinx-gallery",
+  "sphinx-copybutton",
+  "memory_profiler",
+  "myst_parser",
+  "toml",
+]
+
+
 [project.urls]
 Homepage = "https://phokaia.gitlab.io/pyddscat"
 Documentation = "https://phokaia.gitlab.io/pyddscat"
@@ -68,3 +91,6 @@ before-all = ["yum install -y gcc-gfortran", "export FC=gfortran"]
 select = "*-musllinux*"
 before-all = ["apk add gfortran", "export FC=gfortran"]
 
+
+[tool.pytest.ini_options]
+addopts = "test --cov=pyddscat --cov-report html --cov-report term"

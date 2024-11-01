@@ -21,9 +21,6 @@ install:
 	pip install .
 
 
-# Install doc requirements
-doc-req:
-	pip install -r doc/requirements.txt
 
 # Build ddscat
 ddscat:
@@ -34,8 +31,8 @@ ddscat:
 # Clean generated files
 clean:
 	cd doc && just clean
-	cd ddscat && make clean
-	rm -rf *.whl
+	cd ddscat/src && make clean
+	rm -rf *.whl htmlcov builddir .pytest_cache coverage.xml .coverage
 	rm -rf wheelhouse build
 
 
@@ -57,10 +54,6 @@ gl:
 
 # Clean, reformat and push to gitlab
 save: clean format gl
-
-# Install development dependencies
-dev:
-    pip install -r dev/requirements.txt
 
 # Format with black
 format:
@@ -84,10 +77,6 @@ cleantest:
 	@rm -rf .coverage* htmlcov coverage.xml
 
 
-# Install requirements for testing
-test-req:
-	@cd test && pip install -r requirements.txt
-
 
 # Run the test suite
 test:
@@ -108,6 +97,10 @@ set:
     meson setup --wipe builddir
 
 bld:
-    meson compile -C builddir
+    meson compile -C builddir 
 
 meson: set bld
+
+
+docker-build:
+    docker build . -t pyddscat
