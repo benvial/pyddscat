@@ -12,8 +12,6 @@ jobs:
     env:
       OPENBLAS_NUM_THREADS: 1
       OMP_NUM_THREADS: 1
-      ENV DISPLAY: :99.0
-      ENV PYVISTA_OFF_SCREEN: true
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -27,6 +25,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Setup headless display
+        uses: pyvista/setup-headless-display-action@v2
       - name: Install package and run tests
         run: |
           pip install .[test] -v
@@ -43,8 +43,6 @@ jobs:
     env:
       OPENBLAS_NUM_THREADS: 1
       OMP_NUM_THREADS: 1
-      ENV DISPLAY: :99.0
-      ENV PYVISTA_OFF_SCREEN: true
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -52,6 +50,8 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
+      - name: Setup headless display
+        uses: pyvista/setup-headless-display-action@v2
       - name: Install package and run tests
         shell: bash -el {0}
         run: |
